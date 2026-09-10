@@ -4,7 +4,7 @@ Portfolio multipagina, responsive e statico, realizzato con Next.js, React e Typ
 
 ## Avvio locale
 
-Requisiti: Node.js 22.13+ e pnpm.
+Requisiti: Node.js 22 (ultima versione disponibile della major) e pnpm 11.19.0.
 
 ```bash
 pnpm install
