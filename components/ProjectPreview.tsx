@@ -3,12 +3,15 @@ import type { Project } from '@/data/projects';
 
 export function ProjectPreview({ project, compact = false, eager = false }: { project: Project; compact?: boolean; eager?: boolean }) {
   const image = project.desktopImages[0];
+  const previewLabel = project.kind === 'real'
+    ? project.externalUrl?.replace(/^https?:\/\//, '')
+    : 'Anteprima · Demo interattiva';
 
   if (image) {
     return (
       <div className={`project-preview project-preview-image theme-${project.theme}`}>
         <div className="browser-frame">
-          <div className="browser-bar"><i /><i /><i /><span>{project.externalUrl?.replace(/^https?:\/\//, '')}</span></div>
+          <div className="browser-bar"><i /><i /><i /><span>{previewLabel}</span></div>
           <Image
             src={image}
             alt={`Anteprima del progetto ${project.title}`}

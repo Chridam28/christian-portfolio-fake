@@ -6,12 +6,11 @@ import { ProjectCard } from './ProjectCard';
 
 const filters = [
   { label: 'Tutti', key: 'all' },
-  { label: 'Lavori reali', key: 'real' },
-  { label: 'Demo', key: 'demo' },
+  { label: 'Progetti pubblicati', key: 'real' },
+  { label: 'Demo interattive', key: 'demo' },
   { label: 'Professionisti', key: 'professionisti' },
   { label: 'Hospitality', key: 'hospitality' },
   { label: 'Sport', key: 'sport' },
-  { label: 'Strumenti digitali', key: 'strumenti-digitali' },
 ] as const;
 
 export function ProjectGallery({ items, limit }: { items: Project[]; limit?: number }) {

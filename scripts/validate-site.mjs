@@ -20,13 +20,11 @@ const requiredRoutes = [
   '/cookie',
   '/progetti/federica-fadel',
   '/progetti/andrea-appierto',
-  '/progetti/casa-mira',
-  '/progetti/riva-14',
-  '/progetti/stayflow',
-  '/progetti/turno',
-  '/progetti/legame',
-  '/progetti/quadro',
-  '/progetti/voce-chiara',
+  '/progetti/casa-lume-boutique',
+  '/progetti/casa-lume-dimora',
+  '/progetti/studio-legale-aurea',
+  '/progetti/studio-nutrizione',
+  '/progetti/professionista-editoriale',
 ];
 
 const routeFile = (route) => route === '/'
@@ -109,16 +107,14 @@ for (const [file, html] of pages) {
 
 const contactHtml = readFileSync(routeFile('/contatti'), 'utf8');
 for (const requirement of [
-  'name="richiesta-progetto"',
-  'method="POST"',
-  'data-netlify="true"',
-  'data-netlify-honeypot="company-website"',
-  'name="form-name"',
-  'value="richiesta-progetto"',
-  'name="privacy"',
+  'Parliamo del tuo prossimo progetto.',
+  'mailto:christiandambrosio2002@gmail.com',
+  'https://wa.me/393793547457?text=',
+  'https://www.instagram.com/chri_dam/',
 ]) {
-  if (!contactHtml.includes(requirement)) failures.push(`/contatti: requisito form mancante (${requirement})`);
+  if (!contactHtml.includes(requirement)) failures.push(`/contatti: contatto o contenuto mancante (${requirement})`);
 }
+if (/<form[\s>]/i.test(contactHtml)) failures.push('/contatti: il vecchio modulo è ancora presente');
 
 const notFoundHtml = readFileSync(notFoundFile, 'utf8');
 if (!notFoundHtml.includes('Errore / 404') || !notFoundHtml.includes('Torna alla homepage')) {
@@ -126,4 +122,4 @@ if (!notFoundHtml.includes('Errore / 404') || !notFoundHtml.includes('Torna alla
 }
 
 if (failures.length) throw new Error(`Validazione fallita:\n${failures.join('\n')}`);
-console.log(`Validazione completata: ${htmlFiles.length} pagine HTML, ${requiredRoutes.length} route, pagina 404, form Netlify, link e ${assetReferences.size} risorse locali controllati.`);
+console.log(`Validazione completata: ${htmlFiles.length} pagine HTML, ${requiredRoutes.length} route, pagina 404, contatti diretti, link e ${assetReferences.size} risorse locali controllati.`);

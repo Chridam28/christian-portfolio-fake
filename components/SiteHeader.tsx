@@ -18,7 +18,7 @@ export function SiteHeader() {
           {navigation.map((item, index) => (
             <Link key={item.href} href={item.href}><span>0{index + 1}</span>{item.label}</Link>
           ))}
-          <Link href="/contatti"><span>06</span>Contatti</Link>
+          <Link href="/contatti"><span>{String(navigation.length + 1).padStart(2, '0')}</span>Contatti</Link>
         </nav>
       </details>
     </header>

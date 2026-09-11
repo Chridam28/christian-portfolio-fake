@@ -1,13 +1,7 @@
 import Link from 'next/link';
-import { isConfigured, navigation, siteConfig, whatsappUrl } from '@/data/site';
+import { contactLinks, navigation, siteConfig } from '@/data/site';
 
 export function SiteFooter() {
-  const hasEmail = isConfigured(siteConfig.email);
-  const hasPhone = isConfigured(siteConfig.phone);
-  const hasWhatsapp = isConfigured(siteConfig.whatsapp);
-  const hasInstagram = isConfigured(siteConfig.instagram);
-  const hasLinkedin = isConfigured(siteConfig.linkedin);
-
   return (
     <footer className="site-footer">
       <div className="shell footer-grid">
@@ -22,17 +16,16 @@ export function SiteFooter() {
         </div>
         <div>
           <p className="footer-label">Contatti</p>
-          {hasEmail ? <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a> : <span className="placeholder-value">{siteConfig.email}</span>}
-          {hasPhone ? <a href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}>{siteConfig.phone}</a> : <span className="placeholder-value">{siteConfig.phone}</span>}
-          {hasWhatsapp && <a href={whatsappUrl(siteConfig.whatsapp)} target="_blank" rel="noreferrer" data-analytics="whatsapp_click">WhatsApp</a>}
+          <a href={contactLinks.email}>{siteConfig.email}</a>
+          <a href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}>{siteConfig.phone}</a>
+          <a href={contactLinks.whatsapp} target="_blank" rel="noopener noreferrer" data-analytics="whatsapp_click">WhatsApp</a>
           <span>Trieste · Italia</span>
         </div>
         <div>
           <p className="footer-label">Note</p>
           <Link href="/privacy">Privacy policy</Link>
           <Link href="/cookie">Cookie policy</Link>
-          {hasInstagram && <a href={siteConfig.instagram} target="_blank" rel="noreferrer">Instagram</a>}
-          {hasLinkedin && <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>}
+          <a href={contactLinks.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
           <span>P.IVA {siteConfig.vat}</span>
         </div>
       </div>
