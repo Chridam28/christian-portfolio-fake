@@ -23,21 +23,16 @@ pnpm run build
 pnpm run test
 ```
 
-Il test va eseguito dopo la build: controlla route obbligatorie, pagina 404 personalizzata, sitemap, robots, manifest, configurazione Netlify Forms, link, ancore e risorse statiche locali.
+Il test va eseguito dopo la build: controlla route obbligatorie, pagina 404 personalizzata, sitemap, robots, manifest, contatti diretti, link, ancore e risorse statiche locali.
 
-## Dati da sostituire
+## Configurazione
 
 Copia `.env.example` in `.env.local` e configura:
 
 - `NEXT_PUBLIC_SITE_URL`: dominio definitivo completo di `https://`;
-- `NEXT_PUBLIC_CONTACT_EMAIL`;
-- `NEXT_PUBLIC_CONTACT_PHONE`;
-- `NEXT_PUBLIC_WHATSAPP_NUMBER`, con prefisso internazionale;
-- `NEXT_PUBLIC_INSTAGRAM_URL`;
-- `NEXT_PUBLIC_LINKEDIN_URL`;
 - `NEXT_PUBLIC_VAT_NUMBER`.
 
-Senza queste variabili il sito mostra intenzionalmente placeholder espliciti e non crea link di contatto non validi.
+Email, WhatsApp e Instagram sono centralizzati in `data/site.ts` e condivisi da pagina Contatti, footer e pulsante flottante.
 
 ## Aggiungere un progetto
 
@@ -59,8 +54,8 @@ Il file `netlify.toml` è già configurato:
 - pnpm 11.19.0, fissato tramite il campo `packageManager`;
 - export statico esplicito, senza Next.js Runtime lato server;
 - intestazioni di sicurezza di base;
-- modulo predisposto per Netlify Forms con honeypot.
+- pagina Contatti basata su collegamenti diretti a WhatsApp, email e Instagram.
 
-Prima della pubblicazione, crea su Netlify le variabili elencate in `.env.example`, collega il repository e verifica l’email destinataria del form. Nessun servizio analytics è attivo: il codice emette solo eventi predisposti (`project_open`, `demo_open`, `external_site_click`, `whatsapp_click`, `form_open`, `form_submit`) verso `dataLayer` se un sistema compatibile viene aggiunto in futuro.
+Prima della pubblicazione, crea su Netlify le variabili elencate in `.env.example` e collega il repository. Nessun servizio analytics è attivo: il codice emette solo eventi predisposti (`project_open`, `demo_open`, `external_site_click`, `whatsapp_click`) verso `dataLayer` se un sistema compatibile viene aggiunto in futuro.
 
 Il sito non è stato pubblicato automaticamente.
