@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import { navigation } from '@/data/site';
+import { navigation, siteConfig } from '@/data/site';
 
 export function SiteHeader() {
   return (
     <header className="site-header shell">
       <Link className="wordmark" href="/" aria-label="Christian D’Ambrosio, home">
-        <span>Christian</span>
-        <span>D’Ambrosio</span>
+        <span className="wordmark-name">{siteConfig.name}</span>
+        <span className="wordmark-role">{siteConfig.role}</span>
       </Link>
       <nav className="desktop-nav" aria-label="Navigazione principale">
         {navigation.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}

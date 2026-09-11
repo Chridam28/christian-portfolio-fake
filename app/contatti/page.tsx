@@ -95,7 +95,6 @@ export default function ContactPage() {
             <li><span>02</span>Spiegami cosa vorresti ottenere.</li>
             <li><span>03</span>Indicami se possiedi già un sito o dei materiali.</li>
           </ol>
-          <p className="contact-location">Lavoro da Trieste e collaboro con professionisti e attività anche da remoto.</p>
         </div>
       </section>
     </main>
