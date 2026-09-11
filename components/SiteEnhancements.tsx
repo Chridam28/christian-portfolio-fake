@@ -1,12 +1,15 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 declare global {
   interface Window { dataLayer?: Array<Record<string, unknown>> }
 }
 
 export function SiteEnhancements() {
+  const pathname = usePathname();
+
   useEffect(() => {
     document.documentElement.classList.add('motion-ready');
     const progress = document.querySelector<HTMLElement>('.scroll-progress');
@@ -47,7 +50,7 @@ export function SiteEnhancements() {
       window.removeEventListener('scroll', onScroll);
       document.removeEventListener('click', trackClick);
     };
-  }, []);
+  }, [pathname]);
 
   return <div className="scroll-progress" aria-hidden="true" />;
 }

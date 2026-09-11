@@ -33,9 +33,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const externalAction = isPublished ? 'Visita il sito' : 'Esplora la demo';
   return <main>
     <section className={`project-hero theme-${project.theme}`}>
-      <div className="shell project-hero-top"><p className="eyebrow">{kindLabels[project.kind]} / {project.sector}</p><span>{statusLabels[project.status]}</span></div>
-      <div className="shell project-title-grid"><h1>{project.title}</h1><div><p>{project.shortDescription}</p>{project.externalUrl ? <a className="button button-accent" href={project.externalUrl} target="_blank" rel="noopener noreferrer" aria-label={`${externalAction}: ${project.title} (si apre in una nuova scheda)`} data-analytics="external_site_click" data-project={project.slug}>{externalAction} <span aria-hidden="true">↗</span></a> : <span className="unavailable-link">Collegamento non disponibile</span>}</div></div>
-      <div className="shell project-hero-visual"><ProjectPreview project={project} eager /></div>
+      <div className="shell project-hero-top page-enter page-enter-1"><p className="eyebrow">{kindLabels[project.kind]} / {project.sector}</p><span>{statusLabels[project.status]}</span></div>
+      <div className="shell project-title-grid"><h1 className="page-enter page-enter-2">{project.title}</h1><div className="page-enter page-enter-3"><p>{project.shortDescription}</p>{project.externalUrl ? <a className="button button-accent" href={project.externalUrl} target="_blank" rel="noopener noreferrer" aria-label={`${externalAction}: ${project.title} (si apre in una nuova scheda)`} data-analytics="external_site_click" data-project={project.slug}>{externalAction} <span aria-hidden="true">↗</span></a> : <span className="unavailable-link">Collegamento non disponibile</span>}</div></div>
+      <div className="shell project-hero-visual page-enter page-enter-4"><ProjectPreview project={project} eager /></div>
     </section>
     <section className="project-facts shell reveal"><dl><div><dt>{isPublished ? 'Cliente' : 'Contesto'}</dt><dd>{isPublished ? project.title : project.scenarioLabel}</dd></div><div><dt>Settore</dt><dd>{project.sector}</dd></div><div><dt>Anno</dt><dd>{project.year}</dd></div><div><dt>Intervento</dt><dd>{project.typeLabel}</dd></div></dl></section>
     <section className="case-intro shell"><p className="section-index">{isPublished ? 'La necessità' : 'Il concept'}</p><div className="reveal"><h2>{project.problem}</h2><p>{project.fullDescription}</p></div></section>

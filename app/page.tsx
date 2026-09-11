@@ -36,16 +36,16 @@ export default function Home() {
     <main>
       <section className="hero" id="home">
         <div className="hero-grid shell">
-          <div className="hero-copy reveal is-visible">
-            <p className="eyebrow"><span className="status-dot" /> Freelance web designer &amp; developer</p>
-            <h1>Il tuo lavoro merita uno spazio digitale <em>all’altezza.</em></h1>
-            <p className="hero-intro">Progetto siti web e strumenti digitali su misura: chiari da usare, riconoscibili e costruiti intorno alla tua attività.</p>
-            <div className="hero-actions">
+          <div className="hero-copy">
+            <p className="eyebrow page-enter page-enter-1"><span className="status-dot" /> Freelance web designer &amp; developer</p>
+            <h1 className="page-enter page-enter-2">Il tuo lavoro merita uno spazio digitale <em>all’altezza.</em></h1>
+            <p className="hero-intro page-enter page-enter-3">Progetto siti web e strumenti digitali su misura: chiari da usare, riconoscibili e costruiti intorno alla tua attività.</p>
+            <div className="hero-actions page-enter page-enter-4">
               <a className="button button-accent" href="#progetti">Guarda i progetti <span aria-hidden="true">↓</span></a>
               <Link className="button button-ghost" href="/contatti">Raccontami il tuo progetto <span aria-hidden="true">↗</span></Link>
             </div>
           </div>
-          <div className="hero-canvas" aria-hidden="true">
+          <div className="hero-canvas page-enter page-enter-5" aria-hidden="true">
             <div className="canvas-ruler ruler-top">08 — 24 — 48 — 64 — 96</div>
             <div className="canvas-ruler ruler-side">STRUCTURE / CONTENT / INTERACTION</div>
             <div className="canvas-card canvas-card-primary"><span className="mini-label">PROGETTO / 01</span><strong>Web design su misura</strong><div className="mini-lines"><i /><i /><i /></div></div>
@@ -53,7 +53,7 @@ export default function Home() {
             <div className="canvas-orbit"><span /></div><span className="canvas-cross cross-a">+</span><span className="canvas-cross cross-b">+</span>
           </div>
         </div>
-        <div className="hero-meta shell"><span>Trieste · Progetti in tutta Italia</span><span>Disponibile per nuovi progetti</span><span>Scorri per esplorare <b aria-hidden="true">↓</b></span></div>
+        <div className="hero-meta shell page-enter page-enter-6"><span>Trieste · Progetti in tutta Italia</span><span>Disponibile per nuovi progetti</span><span>Scorri per esplorare <b aria-hidden="true">↓</b></span></div>
       </section>
 
       <section className="intro-band" aria-label="Approccio">

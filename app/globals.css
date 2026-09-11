@@ -25,8 +25,19 @@ body {
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 .shell { width: min(100% - 48px, 1360px); margin-inline: auto; }
-.page-transition { animation: page-content-in 220ms both cubic-bezier(.22, .78, .24, 1); }
-@keyframes page-content-in { from { opacity: .82; transform: translateY(8px); } }
+#contenuto { background: var(--ink); }
+.page-transition { animation: page-content-in 650ms backwards cubic-bezier(.22, 1, .36, 1); }
+.page-transition--exiting { pointer-events: none; animation: page-content-out 190ms both cubic-bezier(.4, 0, 1, 1); }
+.page-enter { animation: page-item-in 650ms backwards cubic-bezier(.22, 1, .36, 1); }
+.page-enter-1 { animation-delay: 0ms; }
+.page-enter-2 { animation-delay: 90ms; }
+.page-enter-3 { animation-delay: 180ms; }
+.page-enter-4 { animation-delay: 270ms; }
+.page-enter-5 { animation-delay: 360ms; }
+.page-enter-6 { animation-delay: 450ms; }
+@keyframes page-content-in { from { opacity: 0; } }
+@keyframes page-content-out { to { opacity: .16; transform: translateY(-8px); } }
+@keyframes page-item-in { from { opacity: 0; transform: translateY(22px); } }
 
 .hero {
   min-height: 100svh;
@@ -161,7 +172,7 @@ img { display: block; max-width: 100%; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-  .page-transition { animation: none !important; }
+  .page-transition, .page-enter { animation: none !important; }
 }
 
 /* Global structure and accessible interaction */
@@ -199,12 +210,8 @@ img { display: block; max-width: 100%; }
 @keyframes floating-contact-in { from { opacity: 0; transform: translateY(10px) scale(.96); } }
 .motion-ready .reveal { opacity: 1; transform: none; }
 .motion-ready .reveal.is-visible { animation: reveal-in .75s both cubic-bezier(.2,.75,.25,1); }
-.hero-copy { animation: hero-in .85s .12s both cubic-bezier(.2,.75,.25,1); }
-.hero-canvas { animation: canvas-in 1s .25s both cubic-bezier(.2,.75,.25,1); }
 .canvas-card-primary { animation: float-primary 7s 1.3s infinite ease-in-out; }
 .canvas-card-secondary { animation: float-secondary 8s 1.5s infinite ease-in-out; }
-@keyframes hero-in { from { opacity: 0; transform: translateY(30px); } }
-@keyframes canvas-in { from { opacity: 0; transform: translateX(32px); } }
 @keyframes reveal-in { from { opacity: .25; transform: translateY(24px); } }
 @keyframes float-primary { 50% { transform: rotate(-2deg) translateY(-8px); } }
 @keyframes float-secondary { 50% { transform: rotate(3deg) translateY(8px); } }

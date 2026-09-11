@@ -8,13 +8,13 @@ type PageHeroProps = {
 export function PageHero({ eyebrow, title, intro, meta }: PageHeroProps) {
   return (
     <section className="page-hero">
-      <div className="shell page-hero-grid reveal">
-        <p className="eyebrow">{eyebrow}</p>
+      <div className="shell page-hero-grid">
+        <p className="eyebrow page-enter page-enter-1">{eyebrow}</p>
         <div>
-          <h1>{title}</h1>
-          <p>{intro}</p>
+          <h1 className="page-enter page-enter-2">{title}</h1>
+          <p className="page-enter page-enter-3">{intro}</p>
         </div>
-        {meta && <p className="page-hero-meta">{meta}</p>}
+        {meta && <p className="page-hero-meta page-enter page-enter-4">{meta}</p>}
       </div>
     </section>
   );
