@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { FloatingContacts } from '@/components/FloatingContacts';
 import { SiteEnhancements } from '@/components/SiteEnhancements';
 import { SiteFooter } from '@/components/SiteFooter';
 import { SiteHeader } from '@/components/SiteHeader';
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SiteHeader />
         <div id="contenuto">{children}</div>
         <SiteFooter />
+        <FloatingContacts />
         <SiteEnhancements />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </body>

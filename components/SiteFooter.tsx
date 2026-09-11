@@ -24,7 +24,7 @@ export function SiteFooter() {
           <p className="footer-label">Contatti</p>
           {hasEmail ? <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a> : <span className="placeholder-value">{siteConfig.email}</span>}
           {hasPhone ? <a href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}>{siteConfig.phone}</a> : <span className="placeholder-value">{siteConfig.phone}</span>}
-          {hasWhatsapp && <a href={whatsappUrl(siteConfig.whatsapp)} target="_blank" rel="noreferrer" data-analytics="whatsapp_click">WhatsApp</a>}
+          {hasWhatsapp && <a href={whatsappUrl(siteConfig.whatsapp)} target="_blank" rel="noopener noreferrer" data-analytics="whatsapp_click">WhatsApp</a>}
           <span>Trieste · Italia</span>
         </div>
         <div>
