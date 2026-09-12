@@ -6,14 +6,31 @@ import { usePathname, useRouter } from 'next/navigation';
 export function PageTransition({ children }: Readonly<{ children: React.ReactNode }>) {
   const pathname = usePathname();
   const router = useRouter();
-  const [exitingPath, setExitingPath] = useState<string | null>(null);
+  const [sourcePath, setSourcePath] = useState<string | null>(null);
   const pendingHref = useRef<string | null>(null);
-  const isExiting = useRef(false);
+  const sourcePathRef = useRef<string | null>(null);
+  const navigationStarted = useRef(false);
+  const isCovering = sourcePath !== null && sourcePath === pathname;
+  const isRevealing = sourcePath !== null && sourcePath !== pathname;
 
-  useEffect(() => {
+  const clearTransition = useCallback(() => {
     pendingHref.current = null;
-    isExiting.current = false;
-  }, [pathname]);
+    sourcePathRef.current = null;
+    navigationStarted.current = false;
+    setSourcePath(null);
+  }, []);
+
+  const continueNavigation = useCallback(() => {
+    if (navigationStarted.current) return;
+    const href = pendingHref.current;
+    if (!href) {
+      clearTransition();
+      return;
+    }
+
+    navigationStarted.current = true;
+    router.push(href);
+  }, [clearTransition, router]);
 
   useEffect(() => {
     const handleInternalNavigation = (event: MouseEvent) => {
@@ -47,28 +64,48 @@ export function PageTransition({ children }: Readonly<{ children: React.ReactNod
       event.preventDefault();
       pendingHref.current = `${destination.pathname}${destination.search}${destination.hash}`;
 
-      if (isExiting.current) return;
-      isExiting.current = true;
-      setExitingPath(pathname);
+      if (sourcePathRef.current) return;
+      navigationStarted.current = false;
+      sourcePathRef.current = pathname;
+      setSourcePath(pathname);
     };
 
     document.addEventListener('click', handleInternalNavigation, true);
     return () => document.removeEventListener('click', handleInternalNavigation, true);
   }, [pathname]);
 
-  const completeNavigation = useCallback((event: React.AnimationEvent<HTMLDivElement>) => {
-    if (event.currentTarget !== event.target || event.animationName !== 'page-content-out') return;
-    const href = pendingHref.current;
-    if (href) router.push(href);
-  }, [router]);
+  useEffect(() => {
+    if (!isCovering) return;
+    const navigationFallback = window.setTimeout(continueNavigation, 260);
+    const visibilityFallback = window.setTimeout(clearTransition, 1200);
+    return () => {
+      window.clearTimeout(navigationFallback);
+      window.clearTimeout(visibilityFallback);
+    };
+  }, [clearTransition, continueNavigation, isCovering]);
+
+  useEffect(() => {
+    if (!isRevealing) return;
+    const visibilityFallback = window.setTimeout(clearTransition, 600);
+    return () => window.clearTimeout(visibilityFallback);
+  }, [clearTransition, isRevealing]);
+
+  const handleOverlayTransitionEnd = useCallback((event: React.TransitionEvent<HTMLDivElement>) => {
+    if (event.currentTarget !== event.target || event.propertyName !== 'opacity') return;
+    if (isCovering) continueNavigation();
+    if (isRevealing) clearTransition();
+  }, [clearTransition, continueNavigation, isCovering, isRevealing]);
+
+  const overlayClassName = [
+    'page-transition-overlay',
+    isCovering ? 'page-transition-overlay--covering' : '',
+    isRevealing ? 'page-transition-overlay--revealing' : '',
+  ].filter(Boolean).join(' ');
 
   return (
-    <div
-      className={`page-transition${exitingPath === pathname ? ' page-transition--exiting' : ''}`}
-      key={pathname}
-      onAnimationEnd={completeNavigation}
-    >
-      {children}
-    </div>
+    <>
+      <div className="page-transition-content" key={pathname}>{children}</div>
+      <div className={overlayClassName} aria-hidden="true" onTransitionEnd={handleOverlayTransitionEnd} />
+    </>
   );
 }
