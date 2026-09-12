@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { FloatingContacts } from '@/components/FloatingContacts';
+import { PageTransition } from '@/components/PageTransition';
 import { SiteEnhancements } from '@/components/SiteEnhancements';
 import { SiteFooter } from '@/components/SiteFooter';
 import { SiteHeader } from '@/components/SiteHeader';
@@ -58,7 +59,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body id="top">
         <a className="skip-link" href="#contenuto">Vai al contenuto</a>
         <SiteHeader />
-        <div id="contenuto">{children}</div>
+        <div id="contenuto"><PageTransition>{children}</PageTransition></div>
         <SiteFooter />
         <FloatingContacts />
         <SiteEnhancements />

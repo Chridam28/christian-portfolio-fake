@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { ContactBand } from '@/components/ContactBand';
 import { ProjectGallery } from '@/components/ProjectGallery';
 import { projects } from '@/data/projects';
@@ -41,7 +42,7 @@ export default function Home() {
             <p className="hero-intro">Progetto siti web e strumenti digitali su misura: chiari da usare, riconoscibili e costruiti intorno alla tua attività.</p>
             <div className="hero-actions">
               <a className="button button-accent" href="#progetti">Guarda i progetti <span aria-hidden="true">↓</span></a>
-              <a className="button button-ghost" href="/contatti">Raccontami il tuo progetto <span aria-hidden="true">↗</span></a>
+              <Link className="button button-ghost" href="/contatti">Raccontami il tuo progetto <span aria-hidden="true">↗</span></Link>
             </div>
           </div>
           <div className="hero-canvas" aria-hidden="true">
@@ -62,11 +63,11 @@ export default function Home() {
       <section className="portfolio-section" id="progetti"><div className="shell">
         <div className="section-heading reveal"><div><p className="eyebrow dark">01 / Progetti</p><h2>Progetti selezionati.</h2></div><p>Siti pubblicati e demo interattive progettati per attività, professionisti e strutture ricettive.</p></div>
         <ProjectGallery items={projects} />
-        <a className="button button-dark section-cta" href="/portfolio">Approfondisci i progetti <span aria-hidden="true">↗</span></a>
+        <Link className="button button-dark section-cta" href="/portfolio">Approfondisci i progetti <span aria-hidden="true">↗</span></Link>
       </div></section>
 
       <section className="services-section" id="servizi"><div className="shell services-layout">
-        <div className="services-heading reveal"><p className="eyebrow">02 / Servizi</p><h2>Il necessario,<br /><em>fatto bene.</em></h2><p>Parto dal problema da risolvere e costruisco una proposta proporzionata, senza aggiungere complessità che non serve.</p><a className="text-link light-link" href="/servizi">Scopri tutti i servizi <span aria-hidden="true">↗</span></a></div>
+        <div className="services-heading reveal"><p className="eyebrow">02 / Servizi</p><h2>Il necessario,<br /><em>fatto bene.</em></h2><p>Parto dal problema da risolvere e costruisco una proposta proporzionata, senza aggiungere complessità che non serve.</p><Link className="text-link light-link" href="/servizi">Scopri tutti i servizi <span aria-hidden="true">↗</span></Link></div>
         <div className="services-list">{services.map(([number, title, copy]) => <article className="service-row reveal" key={number}><span>{number}</span><div><h3>{title}</h3><p>{copy}</p></div><b aria-hidden="true">↗</b></article>)}</div>
       </div></section>
 
@@ -80,7 +81,7 @@ export default function Home() {
         <ol>{reasons.map((reason, index) => <li key={reason}><span>{String(index + 1).padStart(2, '0')}</span><p>{reason}</p></li>)}</ol>
       </div></section>
 
-      <section className="about-preview shell"><div className="about-grid reveal"><p className="section-index">05 / Chi sono</p><div><h2>Un professionista indipendente. Un unico referente, dall’idea al lancio.</h2><p>Sono Christian e lavoro a Trieste. Seguo ogni progetto in prima persona, dalla struttura alle ultime verifiche, per mantenere coerenza, tempi chiari e un rapporto semplice con chi mi affida il proprio spazio digitale.</p><a className="button button-dark" href="/chi-sono">Qualcosa su di me <span aria-hidden="true">↗</span></a></div><div className="about-signature" aria-hidden="true"><span>CD</span><i /></div></div></section>
+      <section className="about-preview shell"><div className="about-grid reveal"><p className="section-index">05 / Chi sono</p><div><h2>Un professionista indipendente. Un unico referente, dall’idea al lancio.</h2><p>Sono Christian e lavoro a Trieste. Seguo ogni progetto in prima persona, dalla struttura alle ultime verifiche, per mantenere coerenza, tempi chiari e un rapporto semplice con chi mi affida il proprio spazio digitale.</p><Link className="button button-dark" href="/chi-sono">Qualcosa su di me <span aria-hidden="true">↗</span></Link></div><div className="about-signature" aria-hidden="true"><span>CD</span><i /></div></div></section>
       <ContactBand />
     </main>
   );
