@@ -572,7 +572,7 @@ body:has(.contact-start-section) .site-footer { padding-top: clamp(58px, 5vw, 74
 .maintenance-box h3 { margin: 0; font-size: clamp(2.3rem, 4vw, 4.4rem); line-height: .92; letter-spacing: -.06em; font-weight: 620; }
 .maintenance-box h3 em { display: block; font-family: var(--font-serif); font-weight: 400; letter-spacing: -.045em; }
 .maintenance-box > div:first-child > p:last-child { max-width: 620px; margin: 26px 0 0; font-size: 1.08rem; color: #2e1a14; }
-.maintenance-box .list-title { margin: 0 0 14px; text-transform: uppercase; letter-spacing: .14em; font-size: 11px; font-weight: 700; }
+.maintenance-box p.list-title { margin: 0 0 14px; color: #21130f; text-transform: uppercase; letter-spacing: .14em; font-size: 11px; font-weight: 700; }
 .maintenance-box ul { margin: 0; padding: 0; list-style: none; }
 .maintenance-box li { padding: 13px 0; border-top: 1px solid rgba(33,19,15,.22); font-size: 1.15rem; letter-spacing: -.02em; }
 .maintenance-box li:last-child { border-bottom: 1px solid rgba(33,19,15,.22); }
