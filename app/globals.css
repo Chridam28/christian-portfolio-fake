@@ -715,3 +715,10 @@ body:has(.contact-start-section) .site-footer { padding-top: clamp(58px, 5vw, 74
 .floating-contact-trigger { background: var(--ink); color: var(--ivory); border-color: var(--accent); box-shadow: 0 14px 42px rgba(16,19,17,.32); }
 .floating-contact-trigger:hover { background: #262b27; color: var(--accent); }
 .floating-contact-trigger svg { color: var(--accent); }
+
+/* Payment terms under the pricing cards */
+.payment-note { display: grid; grid-template-columns: 52px 1fr; align-items: center; gap: 18px; margin-top: 14px; padding: 22px clamp(20px, 3vw, 36px); border: 1px solid var(--line); background: #f5f1e8; }
+.payment-note > span { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 50%; background: var(--ink); color: var(--accent); font-size: 20px; font-weight: 700; }
+.payment-note p { margin: 0; color: #3f433e; font-size: 1.05rem; }
+.payment-note strong { color: var(--ink); }
+@media (max-width: 580px) { .payment-note { grid-template-columns: 1fr; } }

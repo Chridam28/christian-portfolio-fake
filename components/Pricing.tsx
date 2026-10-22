@@ -9,7 +9,7 @@ type PricingProps = {
 };
 
 export function Pricing({ lang, index, showFaqLink = false }: PricingProps) {
-  const { packages, maintenanceIncludes } = pricing[lang];
+  const { packages, payment, maintenanceIncludes } = pricing[lang];
   const t = lang === 'en'
     ? {
       title: <>Clear prices,<br /><em>agreed upfront.</em></>,
@@ -53,6 +53,11 @@ export function Pricing({ lang, index, showFaqLink = false }: PricingProps) {
               <ul>{item.includes.map((line) => <li key={line}>{line}</li>)}</ul>
             </article>
           ))}
+        </div>
+
+        <div className="payment-note reveal">
+          <span aria-hidden="true">€</span>
+          <p><strong>{payment.title}</strong> {payment.text}</p>
         </div>
 
         <div className="maintenance-box reveal">

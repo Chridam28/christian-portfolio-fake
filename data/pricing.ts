@@ -13,7 +13,7 @@ export type PricingPackage = {
 
 export type Faq = { question: string; answer: string };
 
-type PricingContent = { packages: PricingPackage[]; maintenanceIncludes: string[]; faqs: Faq[] };
+type PricingContent = { packages: PricingPackage[]; payment: { title: string; text: string }; maintenanceIncludes: string[]; faqs: Faq[] };
 
 const it: PricingContent = {
   packages: [
@@ -62,11 +62,19 @@ const it: PricingContent = {
       ],
     },
   ],
+  payment: {
+    title: 'Paghi solo se la demo ti convince.',
+    text: 'Nessun anticipo: il costo di realizzazione si paga per intero solo all’accettazione della demo operativa, quando hai visto il tuo sito funzionante. Se preferisci, puoi dividerlo in 3 rate.',
+  },
   maintenanceIncludes: ['Dominio', 'Hosting', 'Backup', 'Certificato di sicurezza (HTTPS)'],
   faqs: [
     {
       question: 'Quanto costa un sito?',
       answer: 'Una landing page costa 350 €. Un sito one page costa 500 € di realizzazione, un sito multipagina (fino a 5 pagine, anche in inglese) 1.000 €. Per one page e multipagina la gestione annuale è di 500 € e comprende dominio, hosting, backup, certificato di sicurezza e tutte le modifiche ai contenuti.',
+    },
+    {
+      question: 'Quando e come si paga?',
+      answer: 'Non chiedo anticipi: il costo di realizzazione si paga per intero solo quando accetti la demo operativa, cioè dopo aver visto il tuo sito funzionante e averlo approvato. Se preferisci, puoi dividere l’importo in 3 rate.',
     },
     {
       question: 'In quanto tempo è pronto?',
@@ -146,11 +154,19 @@ const en: PricingContent = {
       ],
     },
   ],
+  payment: {
+    title: 'You only pay if you’re happy with the demo.',
+    text: 'No deposit: the build cost is paid in full only when you approve the working demo, once you’ve seen your website up and running. If you prefer, you can split it into three instalments.',
+  },
   maintenanceIncludes: ['Domain name', 'Hosting', 'Backups', 'SSL certificate (HTTPS)'],
   faqs: [
     {
       question: 'How much does a website cost?',
       answer: 'A landing page costs €350. A one-page website costs €500 to build and a multi-page website (up to five pages, in Italian and English) €1,000. For one-page and multi-page websites the annual care plan is €500 and covers the domain name, hosting, backups, the SSL certificate and every content edit you need.',
+    },
+    {
+      question: 'When and how do I pay?',
+      answer: 'There’s no upfront deposit: the build cost is paid in full only when you approve the working demo, after you’ve seen your website up and running and signed it off. If you prefer, you can split the amount into three instalments.',
     },
     {
       question: 'How long does it take?',
