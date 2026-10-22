@@ -8,7 +8,7 @@ import { href, type Lang } from '@/lib/i18n';
 
 const descriptions: Record<Lang, string> = {
   it: 'Siti web su misura per professionisti e piccole attività. Da 350 €, prima demo in 48 ore.',
-  en: 'Bespoke websites for professionals and small businesses. From €350, first demo within 48 hours.',
+  en: 'Custom websites for professionals and small businesses. From €350, first demo within 48 hours.',
 };
 
 export function SiteChrome({ lang, children }: Readonly<{ lang: Lang; children: React.ReactNode }>) {

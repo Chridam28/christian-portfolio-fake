@@ -87,7 +87,7 @@ export const projectsEn: Record<string, Translatable> = {
     sector: 'Sport and US colleges',
     year: 'Live since 2026',
     shortDescription: 'An English-language platform for US college coaches: a roster of Italian athletes with filters, profiles, video and side-by-side comparison.',
-    fullDescription: 'Bespoke website for College Life Italia, which since 2013 has helped Italian student-athletes move on to colleges and universities in the United States. It is built for American coaches: they browse the basketball, swimming and volleyball rosters, open each athlete’s profile, watch their film, save and compare profiles, and contact the right sport manager directly.',
+    fullDescription: 'Custom website for College Life Italia, which since 2013 has helped Italian student-athletes move on to colleges and universities in the United States. It is built for American coaches: they browse the basketball, swimming and volleyball rosters, open each athlete’s profile, watch their film, save and compare profiles, and contact the right sport manager directly.',
     problem: 'College coaches receive dozens of profiles every day. They needed a tool that saves them time: finding the right athletes by position, level and availability in a few clicks, and reaching the person who can answer straight away.',
     objectives: [
       'Help coaches find the right athlete in a few clicks',
@@ -110,11 +110,11 @@ export const projectsEn: Record<string, Translatable> = {
       { title: 'One-tap contacts', text: 'A coaches’ page lists the manager for each sport, with save-to-contacts, WhatsApp and email pre-filled for the athlete or roster being viewed.' },
       { title: 'Results you can see', text: 'The Track Record page shows selected placements by sport, with destination universities, and the agency’s figures since 2013.' },
     ],
-    services: ['UX/UI design', 'Bespoke development', 'Filters, saved items and comparison', 'Forms and enquiry routing', 'Privacy and cookies'],
+    services: ['UX/UI design', 'Custom development', 'Filters, saved items and comparison', 'Forms and enquiry routing', 'Privacy and cookies'],
     galleryTitle: 'Rosters by sport, at a glance.',
     mobileTitle: 'The roster in your pocket.',
     mobileText: 'Many coaches review profiles on the road or between practices. On a smartphone, profiles and film stay easy to read, and Saved and Compare are pinned to the bottom of the screen, right under the thumb.',
-    typeLabel: 'Bespoke web platform',
+    typeLabel: 'Custom web platform',
   },
   'casa-lume': {
     title: 'Casa Lume',

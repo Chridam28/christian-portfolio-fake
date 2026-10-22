@@ -16,13 +16,13 @@ const copy = {
     ] as Array<[string, string, string[]]>,
   },
   en: {
-    hero: { eyebrow: 'Services / Pricing', title: 'Services and pricing.', intro: 'Three fixed-price packages, an annual care plan with edits included, and bespoke solutions when you need something more.', meta: 'First demo within 48 hours' },
+    hero: { eyebrow: 'Services / Pricing', title: 'Services and pricing.', intro: 'Three fixed-price packages, an annual care plan with edits included, and custom solutions when you need something more.', meta: 'First demo within 48 hours' },
     pricingIndex: '01 / Packages',
-    custom: { eyebrow: '02 / Bespoke work', title: <>Need<br /><em>something more?</em></>, text: 'For this kind of work I prepare a tailored quote: tell me what you need and I’ll give you costs and timing before we start.' },
+    custom: { eyebrow: '02 / Custom work', title: <>Need<br /><em>something more?</em></>, text: 'For this kind of work I prepare a tailored quote: tell me what you need and I’ll give you costs and timing before we start.' },
     offers: [
       ['Website redesign', 'Already have a website that’s outdated, slow or no longer represents you? I’ll rebuild it from scratch, keeping what works and carrying over your copy and content.', ['Review of what isn’t working', 'New structure and design', 'Content migration', 'Launch']],
       ['Online booking', 'Clients check availability, book an appointment or make a reservation straight from your website, with no back-and-forth phone calls.', ['Availability requests', 'Appointments and consultations', 'Members’ areas', 'Tested on every device']],
-      ['Bespoke tools', 'Small web apps that replace spreadsheets, notes and manual steps with something simple to use.', ['Lightweight management tools', 'Forms and records', 'Dashboards for you or your team', 'Built to grow with your business']],
+      ['Custom tools', 'Small web apps that replace spreadsheets, notes and manual steps with something simple to use.', ['Lightweight management tools', 'Forms and records', 'Dashboards for you or your team', 'Built to grow with your business']],
     ] as Array<[string, string, string[]]>,
   },
 };

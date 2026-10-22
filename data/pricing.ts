@@ -116,7 +116,7 @@ const en: PricingContent = {
       priceNote: 'one-off',
       pitch: 'A single, focused page to launch a service, an event or a promotion and collect enquiries.',
       includes: [
-        'Bespoke design, no templates',
+        'Custom design, no templates',
         'Flawless on smartphones',
         'WhatsApp, email or contact form buttons',
         'Publishing included',
@@ -130,7 +130,7 @@ const en: PricingContent = {
       maintenance: '+ €500/year care plan, edits included',
       pitch: 'Your whole business on one fast page, polished down to the last detail. The right choice for most professionals.',
       includes: [
-        'Bespoke design, built mobile-first',
+        'Custom design, built mobile-first',
         'SEO: set up so people find you on Google',
         'GEO: optimised for answers from ChatGPT, Gemini and other AI assistants',
         'Fast loading and structured data',

@@ -23,7 +23,7 @@ const copy = {
     paragraphs: [
       'When you trust me with your website, you’re not passed from a salesperson to a designer to a developer: it’s always me. I organise the content, design the pages, build the site, take it live and keep it up to date.',
       'In practice, that means quick answers, fast decisions and no passing the buck: if something needs changing, you know who to message. And with the annual care plan, content edits are already included.',
-      'I work with psychologists, professional practices, guest houses and small businesses. I can build you a simple, fast website or add online booking, members’ areas and bespoke tools.',
+      'I work with psychologists, professional practices, guest houses and small businesses. I can build you a simple, fast website or add online booking, members’ areas and custom tools.',
     ],
     values: ['I listen before I propose anything', 'I design for smartphones first', 'I explain every choice in plain language', 'I’m still here after launch'],
     areasTitle: 'Who I work with',
