@@ -609,7 +609,7 @@ body:has(.contact-start-section) .site-footer { padding-top: clamp(58px, 5vw, 74
 .carousel-controls button { width: 52px; height: 52px; border: 1px solid var(--ink); border-radius: 50%; background: var(--ink); color: var(--ivory); font-size: 18px; cursor: pointer; transition: background .2s ease, color .2s ease, opacity .2s ease, transform .2s ease; }
 .carousel-controls button:hover:not(:disabled) { background: var(--accent); border-color: var(--accent-dark); color: var(--ink); transform: translateY(-2px); }
 .carousel-controls button:disabled { opacity: .25; cursor: default; }
-.portfolio-track { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, calc((100% - 48px) / 2.35)); gap: 24px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: 0; padding-bottom: 18px; scrollbar-width: thin; scrollbar-color: var(--ink) transparent; }
+.portfolio-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 48px) / 2.35); gap: 24px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: 0; padding-bottom: 18px; scrollbar-width: thin; scrollbar-color: var(--ink) transparent; }
 .portfolio-track:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
 .portfolio-track > .portfolio-card { scroll-snap-align: start; }
 .portfolio-track::-webkit-scrollbar { height: 6px; }
@@ -670,11 +670,11 @@ body:has(.contact-start-section) .site-footer { padding-top: clamp(58px, 5vw, 74
 .project-services + .customizations { margin-top: -20px; }
 
 @media (max-width: 900px) {
-  .portfolio-track { grid-auto-columns: minmax(0, 78%); }
+  .portfolio-track { grid-auto-columns: 78%; }
   .testimonials-grid, .highlights-grid, .highlights-grid.count-4, .variant-grid, .testimonial-feature > div { grid-template-columns: 1fr; }
 }
 @media (max-width: 580px) {
-  .portfolio-track { grid-auto-columns: minmax(0, 88%); gap: 14px; }
+  .portfolio-track { grid-auto-columns: 88%; gap: 14px; }
   .carousel-controls button { width: 44px; height: 44px; }
   .testimonial-card figcaption { grid-template-columns: 44px 1fr; }
   .testimonial-card figcaption a { grid-column: 2; justify-self: start; }
