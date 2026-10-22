@@ -722,3 +722,46 @@ body:has(.contact-start-section) .site-footer { padding-top: clamp(58px, 5vw, 74
 .payment-note p { margin: 0; color: #3f433e; font-size: 1.05rem; }
 .payment-note strong { color: var(--ink); }
 @media (max-width: 580px) { .payment-note { grid-template-columns: 1fr; } }
+
+/* Tracking tuned for Inter Tight + Instrument Serif (the old values were set for Helvetica Neue) */
+.hero h1 { letter-spacing: -0.043em; }
+.hero h1 em { letter-spacing: -0.012em; }
+.canvas-card strong { letter-spacing: -0.012em; }
+.canvas-card-secondary b { letter-spacing: -0.034em; }
+.intro-statement { letter-spacing: -0.034em; }
+.section-heading h2 { letter-spacing: -0.04em; }
+.mobile-menu nav a { letter-spacing: -0.025em; }
+.contact-band h2 { letter-spacing: -0.043em; }
+.footer-mark { letter-spacing: -0.031em; }
+.portfolio-card h2 { letter-spacing: -0.034em; }
+.demo-layout strong { letter-spacing: -0.037em; }
+.services-heading h2 { letter-spacing: -0.04em; }
+.service-row h3 { letter-spacing: -0.028em; }
+.reasons-grid h2 { letter-spacing: -0.04em; }
+.about-grid h2 { letter-spacing: -0.036em; }
+.page-hero h1 { letter-spacing: -0.045em; }
+.offer-row h2 { letter-spacing: -0.031em; }
+.scope-note h2 { letter-spacing: -0.037em; }
+.about-lead h2 { letter-spacing: -0.034em; }
+.contact-options-heading h2 { letter-spacing: -0.037em; }
+.contact-channel-copy strong { letter-spacing: -0.031em; }
+.contact-start-grid h2 { letter-spacing: -0.037em; }
+.project-title-grid h1 { letter-spacing: -0.048em; }
+.case-intro h2 { letter-spacing: -0.034em; }
+.case-solution h2 { letter-spacing: -0.037em; }
+.objectives h2 { letter-spacing: -0.034em; }
+.gallery-heading h2 { letter-spacing: -0.034em; }
+.mobile-grid h2 { letter-spacing: -0.037em; }
+.project-services h2 { letter-spacing: -0.034em; }
+.not-found span:not(.button span) { letter-spacing: -0.062em; }
+.not-found h1 { letter-spacing: -0.037em; }
+.wordmark-name { letter-spacing: -0.028em; }
+.pricing-card h3 { letter-spacing: -0.025em; }
+.pricing-price strong { letter-spacing: -0.037em; }
+.maintenance-box h3 { letter-spacing: -0.037em; }
+.maintenance-box h3 em { letter-spacing: -0.012em; }
+.faq-heading h2 { letter-spacing: -0.037em; }
+.highlight-card h3 { letter-spacing: -0.025em; }
+.variant-grid h2 { letter-spacing: -0.037em; }
+h1 em, h2 em, h3 em { letter-spacing: -0.01em; }
+.testimonial-card blockquote, .testimonial-feature blockquote { letter-spacing: -0.005em; }
