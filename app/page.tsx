@@ -1,34 +1,35 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ContactBand } from '@/components/ContactBand';
+import { Pricing } from '@/components/Pricing';
 import { ProjectGallery } from '@/components/ProjectGallery';
 import { projects } from '@/data/projects';
 
 export const metadata: Metadata = { alternates: { canonical: '/' } };
 
 const services = [
-  ['01', 'Siti web professionali', 'Una presenza credibile, chiara e costruita attorno al modo in cui lavori.'],
-  ['02', 'Landing page', 'Una pagina focalizzata per presentare un servizio, un evento o una nuova iniziativa.'],
-  ['03', 'Restyling', 'Struttura, identità e prestazioni ripensate senza perdere ciò che già funziona.'],
-  ['04', 'Prenotazioni e funzioni su misura', 'Flussi utili integrati nel sito, dalle richieste di disponibilità alle aree riservate.'],
-  ['05', 'Strumenti digitali', 'Piccole web app costruite per semplificare attività, passaggi e informazioni.'],
-  ['06', 'Manutenzione e SEO iniziale', 'Aggiornamenti, assistenza e fondamenta tecniche per rendere il sito trovabile e affidabile.'],
+  ['01', 'Siti web per la tua attività', 'Chi sei, cosa offri e come contattarti: in una pagina o fino a cinque, anche in inglese. Pronti per Google e per le ricerche con l’AI.'],
+  ['02', 'Landing page', 'Una pagina sola per lanciare un servizio, un evento o una promozione e raccogliere contatti.'],
+  ['03', 'Modifiche incluse tutto l’anno', 'Con la gestione annuale mi scrivi cosa cambiare e lo faccio io: testi, immagini, post, pagine. Più dominio, hosting e backup.'],
+  ['04', 'Rifacimento del tuo sito', 'Hai un sito vecchio, lento o che non ti rappresenta più? Lo rifaccio tenendo quello che funziona.'],
+  ['05', 'Prenotazioni online', 'I clienti chiedono disponibilità o prenotano dal sito, senza telefonate avanti e indietro.'],
+  ['06', 'Strumenti su misura', 'Piccole applicazioni web per sostituire fogli Excel, appunti e passaggi fatti a mano.'],
 ];
 
 const method = [
-  ['01', 'Confronto iniziale', 'Mi racconti attività, pubblico e obiettivi. Mettiamo a fuoco cosa serve davvero.'],
-  ['02', 'Struttura e direzione', 'Definisco contenuti, priorità e una direzione visiva coerente con la tua identità.'],
-  ['03', 'Realizzazione e revisioni', 'Costruisco il progetto per fasi e condivido gli avanzamenti in momenti chiari.'],
-  ['04', 'Pubblicazione e assistenza', 'Porto il sito online, verifico tutto e rimango disponibile dopo il lancio.'],
+  ['01', 'Mi scrivi', 'Mi racconti la tua attività e cosa ti serve. Ti rispondo con una proposta e un prezzo chiaro.'],
+  ['02', 'Mi mandi il materiale', 'Testi e immagini. Se non sai cosa preparare, ti dico io cosa serve sezione per sezione.'],
+  ['03', 'Demo in 48 ore', 'Entro 48 ore dall’invio del materiale vedi la prima versione funzionante. La sistemiamo insieme.'],
+  ['04', 'Online e sempre aggiornato', 'Pubblico il sito e, con la gestione annuale, ogni modifica ai contenuti la faccio io.'],
 ];
 
 const reasons = [
-  'Hai un unico referente dall’inizio alla pubblicazione.',
-  'Ogni scelta parte dalla tua attività, non da un template.',
-  'Progetto il mobile come parte centrale dell’esperienza.',
-  'Sai sempre cosa stiamo facendo e quale sarà il passo successivo.',
-  'Dopo il lancio non scompaio: posso seguire aggiornamenti e manutenzione.',
-  'Quando serve, sito e funzioni personalizzate possono crescere insieme.',
+  'Mi scrivi su WhatsApp e ti rispondo io, non un centralino.',
+  'Prezzi fissi, decisi prima di iniziare. Niente sorprese.',
+  'Prima demo funzionante in 48 ore dall’invio del materiale.',
+  'Ogni sito è disegnato per te, non preso da un template.',
+  'Perfetto da smartphone, da dove ti cerca la maggior parte delle persone.',
+  'Dopo il lancio non sparisco: le modifiche ai contenuti sono incluse.',
 ];
 
 export default function Home() {
@@ -38,50 +39,52 @@ export default function Home() {
         <div className="hero-grid shell">
           <div className="hero-copy reveal is-visible">
             <p className="eyebrow"><span className="status-dot" /> Freelance web designer &amp; developer</p>
-            <h1>Il tuo lavoro merita uno spazio digitale <em>all’altezza.</em></h1>
-            <p className="hero-intro">Progetto siti web e strumenti digitali su misura: chiari da usare, riconoscibili e costruiti intorno alla tua attività.</p>
+            <h1>Siti web su misura. <em>Prima demo in 48&nbsp;ore.</em></h1>
+            <p className="hero-intro">Creo siti per professionisti e piccole attività: chiari, veloci, perfetti da smartphone e pronti per Google. Da 350&nbsp;€, e dopo il lancio le modifiche le faccio io.</p>
             <div className="hero-actions">
-              <a className="button button-accent" href="#progetti">Guarda i progetti <span aria-hidden="true">↓</span></a>
-              <Link className="button button-ghost" href="/contatti">Raccontami il tuo progetto <span aria-hidden="true">↗</span></Link>
+              <a className="button button-accent" href="#progetti">Vedi i lavori <span aria-hidden="true">↓</span></a>
+              <Link className="button button-ghost" href="/contatti">Chiedimi un preventivo <span aria-hidden="true">↗</span></Link>
             </div>
           </div>
           <div className="hero-canvas" aria-hidden="true">
-            <div className="canvas-ruler ruler-top">08 — 24 — 48 — 64 — 96</div>
-            <div className="canvas-ruler ruler-side">STRUCTURE / CONTENT / INTERACTION</div>
-            <div className="canvas-card canvas-card-primary"><span className="mini-label">PROGETTO / 01</span><strong>Web design su misura</strong><div className="mini-lines"><i /><i /><i /></div></div>
-            <div className="canvas-card canvas-card-secondary"><span>Design responsive</span><b>Ogni schermo</b></div>
+            <div className="canvas-ruler ruler-top">DEMO IN 48 ORE — DA 350 €</div>
+            <div className="canvas-ruler ruler-side">DESIGN / SVILUPPO / ONLINE</div>
+            <div className="canvas-card canvas-card-primary"><span className="mini-label">IL TUO SITO / 01</span><strong>Su misura, non da template</strong><div className="mini-lines"><i /><i /><i /></div></div>
+            <div className="canvas-card canvas-card-secondary"><span>Gestione annuale</span><b>Modifiche incluse</b></div>
             <div className="canvas-orbit"><span /></div><span className="canvas-cross cross-a">+</span><span className="canvas-cross cross-b">+</span>
           </div>
         </div>
-        <div className="hero-meta shell"><span>Trieste · Progetti in tutta Italia</span><span>Disponibile per nuovi progetti</span><span>Scorri per esplorare <b aria-hidden="true">↓</b></span></div>
+        <div className="hero-meta shell"><span>Trieste · Clienti in tutta Italia</span><span>Disponibile per nuovi progetti</span><span>Scorri per esplorare <b aria-hidden="true">↓</b></span></div>
       </section>
 
       <section className="intro-band" aria-label="Approccio">
-        <div className="shell intro-layout reveal"><p className="section-index">00 / In breve</p><p className="intro-statement">Niente passaggi di mano. <span>Parli direttamente con chi progetta, sviluppa e segue il tuo sito dopo la pubblicazione.</span></p></div>
+        <div className="shell intro-layout reveal"><p className="section-index">00 / In breve</p><p className="intro-statement">Niente agenzie, niente intermediari. <span>Mi scrivi, ti rispondo io e sono sempre io a costruire e aggiornare il tuo sito.</span></p></div>
       </section>
 
       <section className="portfolio-section" id="progetti"><div className="shell">
-        <div className="section-heading reveal"><div><p className="eyebrow dark">01 / Progetti</p><h2>Progetti selezionati.</h2></div><p>Siti pubblicati e demo interattive progettati per attività, professionisti e strutture ricettive.</p></div>
+        <div className="section-heading reveal"><div><p className="eyebrow dark">01 / Progetti</p><h2>Lavori e demo.</h2></div><p>Due siti già online per due psicologi e cinque demo che puoi aprire e provare, per vedere come potrebbe funzionare il tuo.</p></div>
         <ProjectGallery items={projects} />
-        <Link className="button button-dark section-cta" href="/portfolio">Approfondisci i progetti <span aria-hidden="true">↗</span></Link>
+        <Link className="button button-dark section-cta" href="/portfolio">Tutti i progetti <span aria-hidden="true">↗</span></Link>
       </div></section>
 
       <section className="services-section" id="servizi"><div className="shell services-layout">
-        <div className="services-heading reveal"><p className="eyebrow">02 / Servizi</p><h2>Il necessario,<br /><em>fatto bene.</em></h2><p>Parto dal problema da risolvere e costruisco una proposta proporzionata, senza aggiungere complessità che non serve.</p><Link className="text-link light-link" href="/servizi">Scopri tutti i servizi <span aria-hidden="true">↗</span></Link></div>
+        <div className="services-heading reveal"><p className="eyebrow">02 / Servizi</p><h2>Cosa posso<br /><em>fare per te.</em></h2><p>Mi dici cosa ti serve e ti propongo solo quello. Niente funzioni inutili per gonfiare il preventivo.</p><Link className="text-link light-link" href="/servizi">Servizi e prezzi <span aria-hidden="true">↗</span></Link></div>
         <div className="services-list">{services.map(([number, title, copy]) => <article className="service-row reveal" key={number}><span>{number}</span><div><h3>{title}</h3><p>{copy}</p></div><b aria-hidden="true">↗</b></article>)}</div>
       </div></section>
 
+      <Pricing index="03 / Prezzi" showFaqLink />
+
       <section className="method-section shell" id="metodo">
-        <div className="section-heading reveal"><div><p className="eyebrow dark">03 / Metodo</p><h2>Un percorso chiaro,<br />dall’idea al sito.</h2></div><p>Quattro passaggi leggibili, con spazio per confrontarsi e senza lasciare decisioni importanti all’ultimo momento.</p></div>
+        <div className="section-heading reveal"><div><p className="eyebrow dark">04 / Come funziona</p><h2>Dal primo messaggio<br />al sito online.</h2></div><p>Quattro passaggi, prezzo deciso prima e la prima demo pronta in 48 ore da quando ricevo testi e immagini.</p></div>
         <div className="method-grid">{method.map(([number, title, copy]) => <article className="method-card reveal" key={number}><div className="method-card-top"><span>{number}</span><div className="method-marker" aria-hidden="true" /></div><div className="method-card-copy"><h3>{title}</h3><p>{copy}</p></div></article>)}</div>
       </section>
 
       <section className="reasons-section"><div className="shell reasons-grid reveal">
-        <div className="reasons-intro"><p className="eyebrow dark">04 / Lavorare insieme</p><h2>Più diretto.<br /><em>Più personale.</em></h2><p>Collaborare con un freelance significa parlare sempre con la persona che prende le decisioni e mette mano al progetto.</p></div>
+        <div className="reasons-intro"><p className="eyebrow dark">05 / Perché io</p><h2>Cosa cambia<br /><em>in pratica.</em></h2><p>Lavorare con un freelance vuol dire parlare direttamente con chi costruisce il tuo sito. Ecco cosa ti porti a casa.</p></div>
         <ol>{reasons.map((reason, index) => <li key={reason}><span>{String(index + 1).padStart(2, '0')}</span><p>{reason}</p></li>)}</ol>
       </div></section>
 
-      <section className="about-preview shell"><div className="about-grid reveal"><p className="section-index">05 / Chi sono</p><div><h2>Un professionista indipendente. Un unico referente, dall’idea al lancio.</h2><p>Sono Christian e lavoro a Trieste. Seguo ogni progetto in prima persona, dalla struttura alle ultime verifiche, per mantenere coerenza, tempi chiari e un rapporto semplice con chi mi affida il proprio spazio digitale.</p><Link className="button button-dark" href="/chi-sono">Qualcosa su di me <span aria-hidden="true">↗</span></Link></div><div className="about-signature" aria-hidden="true"><span>CD</span><i /></div></div></section>
+      <section className="about-preview shell"><div className="about-grid reveal"><p className="section-index">06 / Chi sono</p><div><h2>Sono Christian, web designer e sviluppatore a Trieste.</h2><p>Mi occupo di tutto io: struttura, grafica, sviluppo, messa online e aggiornamenti. Lavoro con professionisti, studi e piccole attività in tutta Italia.</p><Link className="button button-dark" href="/chi-sono">Chi sono <span aria-hidden="true">↗</span></Link></div><div className="about-signature" aria-hidden="true"><span>CD</span><i /></div></div></section>
       <ContactBand />
     </main>
   );

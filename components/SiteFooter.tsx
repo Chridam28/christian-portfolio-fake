@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="shell footer-grid">
         <div>
           <Link className="footer-mark" href="/">Christian<br />D’Ambrosio</Link>
-          <p>Siti web e strumenti digitali su misura per professionisti e piccole attività.</p>
+          <p>Siti web su misura per professionisti e piccole attività. Prima demo in 48 ore, modifiche incluse.</p>
         </div>
         <div>
           <p className="footer-label">Esplora</p>
@@ -22,7 +22,7 @@ export function SiteFooter() {
           <span>Trieste · Italia</span>
         </div>
         <div>
-          <p className="footer-label">Note</p>
+          <p className="footer-label">Info</p>
           <Link href="/privacy">Privacy policy</Link>
           <Link href="/cookie">Cookie policy</Link>
           <a href={contactLinks.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>

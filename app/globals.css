@@ -130,6 +130,7 @@ img { display: block; max-width: 100%; }
 .browser-bar span { margin-inline: auto; }
 .browser-frame img { width: 100%; height: auto; aspect-ratio: 1.44; object-fit: cover; object-position: top; }
 
+
 @media (max-width: 900px) {
   .shell { width: min(100% - 32px, 720px); }
   .site-header { grid-template-columns: 1fr auto; min-height: 76px; }
@@ -546,4 +547,57 @@ body:has(.contact-start-section) .site-footer { padding-top: clamp(58px, 5vw, 74
   .case-intro { grid-template-columns: 1fr; }
   .case-intro div > p { margin-left: 0; }
   .customizations { grid-template-columns: 1fr; }
+}
+
+/* Pricing and FAQ */
+.section-heading h2 em { color: var(--accent-dark); font-family: var(--font-serif); font-weight: 400; }
+.pricing-section { padding-block: clamp(100px, 12vw, 180px); background: var(--paper); }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: clamp(50px, 6vw, 80px); }
+.pricing-card { display: flex; flex-direction: column; padding: clamp(26px, 3vw, 40px); border: 1px solid var(--line); background: #f5f1e8; }
+.pricing-card h3 { margin: 0; font-size: clamp(1.5rem, 2.2vw, 2.1rem); letter-spacing: -.04em; }
+.pricing-price { display: flex; align-items: baseline; gap: 10px; margin: 26px 0 0; }
+.pricing-price strong { font-size: clamp(3rem, 4.6vw, 4.6rem); line-height: .9; letter-spacing: -.06em; font-weight: 620; }
+.pricing-price span { color: #5f635d; font-size: 14px; }
+.pricing-maintenance { margin: 12px 0 0; color: var(--accent-dark); font-size: 14px; font-weight: 650; }
+.pricing-pitch { margin: 24px 0 0; color: #4f534d; }
+.pricing-card ul { margin: 26px 0 0; padding: 22px 0 0; list-style: none; border-top: 1px solid var(--line); color: #3f433e; font-size: 15px; }
+.pricing-card li { display: grid; grid-template-columns: 22px 1fr; margin-bottom: 10px; }
+.pricing-card li:before { content: '✓'; color: var(--accent-dark); font-weight: 700; }
+.pricing-card.is-highlight { background: var(--ink); color: var(--ivory); border-color: var(--ink); }
+.pricing-card.is-highlight .pricing-price span, .pricing-card.is-highlight .pricing-pitch { color: #b9bbb6; }
+.pricing-card.is-highlight .pricing-maintenance, .pricing-card.is-highlight li:before { color: var(--accent); }
+.pricing-card.is-highlight ul { color: #e4e1d9; border-color: var(--line-dark); }
+.maintenance-box { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(36px, 6vw, 90px); margin-top: 14px; padding: clamp(30px, 4.5vw, 64px); background: var(--accent); color: #21130f; }
+.maintenance-box .eyebrow { margin-bottom: 22px; color: #21130f; }
+.maintenance-box h3 { margin: 0; font-size: clamp(2.3rem, 4vw, 4.4rem); line-height: .92; letter-spacing: -.06em; font-weight: 620; }
+.maintenance-box h3 em { display: block; font-family: var(--font-serif); font-weight: 400; letter-spacing: -.045em; }
+.maintenance-box > div:first-child > p:last-child { max-width: 620px; margin: 26px 0 0; font-size: 1.08rem; color: #2e1a14; }
+.maintenance-box .list-title { margin: 0 0 14px; text-transform: uppercase; letter-spacing: .14em; font-size: 11px; font-weight: 700; }
+.maintenance-box ul { margin: 0; padding: 0; list-style: none; }
+.maintenance-box li { padding: 13px 0; border-top: 1px solid rgba(33,19,15,.22); font-size: 1.15rem; letter-spacing: -.02em; }
+.maintenance-box li:last-child { border-bottom: 1px solid rgba(33,19,15,.22); }
+.maintenance-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 30px; }
+.maintenance-box .button-accent { background: var(--ink); color: var(--ivory); border-color: var(--ink); }
+.maintenance-box .button-accent:hover { background: #262b27; }
+.maintenance-box .text-link { margin-top: 0; color: #21130f; }
+.faq-section { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(50px, 9vw, 140px); padding-block: clamp(100px, 12vw, 170px); }
+.faq-heading h2 { margin: 0; font-size: clamp(3rem, 5.2vw, 5.8rem); line-height: .88; letter-spacing: -.06em; font-weight: 610; }
+.faq-heading h2 em { color: var(--accent-dark); font-family: var(--font-serif); font-weight: 400; }
+.faq-list { border-top: 1px solid var(--line); }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-item summary { display: grid; grid-template-columns: 50px 1fr 30px; align-items: baseline; padding: 24px 0; cursor: pointer; list-style: none; font-size: clamp(1.2rem, 1.8vw, 1.65rem); letter-spacing: -.03em; font-weight: 600; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary span { color: var(--accent-dark); font: 11px ui-monospace, monospace; }
+.faq-item summary b { justify-self: end; color: var(--accent-dark); font-weight: 400; transition: transform .25s ease; }
+.faq-item[open] summary b { transform: rotate(45deg); }
+.faq-item p { max-width: 640px; margin: -6px 0 26px 50px; color: #4f534d; font-size: 1.05rem; }
+.offer-list .section-heading { border-bottom: 0; }
+@media (max-width: 900px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+  .maintenance-box, .faq-section { grid-template-columns: 1fr; }
+}
+@media (max-width: 580px) {
+  .faq-item summary { grid-template-columns: 34px 1fr 24px; }
+  .faq-item p { margin-left: 34px; }
+  .maintenance-actions { flex-direction: column; align-items: flex-start; }
 }

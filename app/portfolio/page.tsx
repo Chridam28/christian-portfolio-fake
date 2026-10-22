@@ -6,10 +6,10 @@ import { projects } from '@/data/projects';
 
 export const metadata: Metadata = {
   title: 'Portfolio',
-  description: 'Progetti pubblicati e demo interattive di Christian D’Ambrosio.',
+  description: 'Siti online e demo interattive per psicologi, studi professionali e strutture ricettive.',
   alternates: { canonical: '/portfolio' },
 };
 
 export default function PortfolioPage() {
-  return <main><PageHero eyebrow="Portfolio / Progetti" title="Progetti selezionati." intro="Siti pubblicati e demo interattive progettati per attività, professionisti e strutture ricettive." meta={`${projects.length} progetti`} /><section className="listing-section shell"><ProjectGallery items={projects} /></section><ContactBand /></main>;
+  return <main><PageHero eyebrow="Portfolio / Progetti" title="Lavori e demo." intro="Due siti già online e cinque demo che puoi aprire e provare: guarda come potrebbe funzionare il tuo." meta={`${projects.length} progetti`} /><section className="listing-section shell"><ProjectGallery items={projects} /></section><ContactBand /></main>;
 }

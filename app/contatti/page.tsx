@@ -5,7 +5,7 @@ import { contactLinks, siteConfig } from '@/data/site';
 
 export const metadata: Metadata = {
   title: 'Contatti',
-  description: 'Contatta Christian D’Ambrosio via WhatsApp, email o Instagram per parlare del tuo prossimo progetto web.',
+  description: 'Scrivi a Christian D’Ambrosio su WhatsApp, email o Instagram per un preventivo: landing page, sito one page o multipagina. Prima demo in 48 ore.',
   alternates: { canonical: '/contatti' },
 };
 
@@ -21,7 +21,7 @@ const contactOptions: Array<{
     channel: 'whatsapp',
     label: 'WhatsApp',
     title: 'Scrivimi su WhatsApp',
-    description: 'Il modo più rapido per raccontarmi la tua idea.',
+    description: 'Il modo più veloce: bastano due righe e ti rispondo.',
     href: contactLinks.whatsapp,
     external: true,
   },
@@ -29,7 +29,7 @@ const contactOptions: Array<{
     channel: 'email',
     label: 'Email',
     title: 'Mandami una email',
-    description: 'Ideale per inviarmi un brief, materiali o maggiori dettagli.',
+    description: 'Comoda per mandarmi testi, immagini o il link al tuo sito attuale.',
     href: contactLinks.email,
     external: false,
   },
@@ -37,7 +37,7 @@ const contactOptions: Array<{
     channel: 'instagram',
     label: 'Instagram',
     title: 'Contattami su Instagram',
-    description: 'Scopri i miei lavori e scrivimi direttamente.',
+    description: 'Se preferisci, scrivimi in direct.',
     href: contactLinks.instagram,
     external: true,
   },
@@ -47,9 +47,9 @@ export default function ContactPage() {
   return (
     <main>
       <PageHero
-        eyebrow="Contatti / Iniziamo"
-        title="Parliamo del tuo prossimo progetto."
-        intro="Raccontami cosa vuoi realizzare, migliorare o portare online. Ti rispondo generalmente entro poche ore."
+        eyebrow="Contatti / Preventivo"
+        title="Scrivimi. Ti rispondo io."
+        intro="Dimmi di cosa ti occupi e cosa ti serve: ti rispondo con una proposta e un prezzo chiaro, senza impegno."
         meta={siteConfig.responseTime}
       />
 
@@ -57,8 +57,8 @@ export default function ContactPage() {
         <div className="contact-options-heading reveal">
           <p className="section-index">Contatto diretto</p>
           <div>
-            <h2 id="contact-options-title">Scegli il canale più comodo per te.</h2>
-            <p>Ogni messaggio arriva direttamente a me, senza passaggi intermedi.</p>
+            <h2 id="contact-options-title">Scegli come preferisci.</h2>
+            <p>WhatsApp è il più veloce, per email puoi allegare materiali. In ogni caso il messaggio arriva a me.</p>
           </div>
         </div>
         <div className="contact-channel-grid">
@@ -87,13 +87,13 @@ export default function ContactPage() {
       <section className="contact-start-section">
         <div className="shell contact-start-grid reveal">
           <div>
-            <p className="eyebrow">Da dove possiamo partire</p>
-            <h2>Non serve avere già tutto definito.</h2>
+            <p className="eyebrow">Cosa scrivermi</p>
+            <h2>Bastano tre informazioni.</h2>
           </div>
           <ol>
-            <li><span>01</span>Raccontami di cosa ti occupi.</li>
-            <li><span>02</span>Spiegami cosa vorresti ottenere.</li>
-            <li><span>03</span>Indicami se possiedi già un sito o dei materiali.</li>
+            <li><span>01</span>Di cosa ti occupi e dove lavori.</li>
+            <li><span>02</span>Cosa ti serve: landing page, sito one page, multipagina o altro.</li>
+            <li><span>03</span>Se hai già un sito, dei testi o delle immagini da usare.</li>
           </ol>
         </div>
       </section>

@@ -14,7 +14,7 @@ export const siteConfig = {
   instagram: contactInstagram,
   vat: process.env.NEXT_PUBLIC_VAT_NUMBER || '[INSERIRE DATI]',
   canonicalUrl: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-  responseTime: 'Generalmente entro poche ore.',
+  responseTime: 'Rispondo di solito entro poche ore',
 } as const;
 
 export function whatsappUrl(value: string) {
@@ -30,6 +30,7 @@ export const contactLinks = {
 export const navigation = [
   { label: 'Progetti', href: '/#progetti' },
   { label: 'Servizi', href: '/servizi' },
-  { label: 'Metodo', href: '/#metodo' },
+  { label: 'Prezzi', href: '/servizi#prezzi' },
+  { label: 'Come funziona', href: '/#metodo' },
   { label: 'Chi sono', href: '/chi-sono' },
 ] as const;
