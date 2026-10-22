@@ -20,7 +20,7 @@ export function ProjectPreview({ lang, project, compact = false, eager = false }
             height={1000}
             preload={eager}
             loading={eager ? undefined : 'lazy'}
-            sizes={compact ? '(max-width: 760px) 100vw, 46vw' : '(max-width: 900px) 100vw, 68vw'}
+            sizes={compact ? '(max-width: 580px) 88vw, (max-width: 900px) 78vw, 42vw' : '(max-width: 900px) 100vw, 90vw'}
           />
         </div>
       </div>
