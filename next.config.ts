@@ -2,7 +2,12 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   output: 'export',
-  images: { unoptimized: true },
+  images: {
+    loader: 'custom',
+    loaderFile: './lib/image-loader.ts',
+    deviceSizes: [720, 1440],
+    imageSizes: [360],
+  },
   trailingSlash: true,
 };
 

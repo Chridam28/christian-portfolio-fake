@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import type { Project } from '@/data/projects';
+import type { Lang } from '@/lib/i18n';
 
-export function ProjectPreview({ project, compact = false, eager = false }: { project: Project; compact?: boolean; eager?: boolean }) {
+export function ProjectPreview({ lang, project, compact = false, eager = false }: { lang: Lang; project: Project; compact?: boolean; eager?: boolean }) {
   const image = project.desktopImages[0];
   const previewLabel = project.kind === 'real'
     ? project.externalUrl?.replace(/^https?:\/\//, '')
-    : 'Anteprima · Demo interattiva';
+    : lang === 'en' ? 'Preview · Interactive demo' : 'Anteprima · Demo interattiva';
 
   if (image) {
     return (
@@ -14,12 +15,12 @@ export function ProjectPreview({ project, compact = false, eager = false }: { pr
           <div className="browser-bar"><i /><i /><i /><span>{previewLabel}</span></div>
           <Image
             src={image}
-            alt={`Anteprima del progetto ${project.title}`}
+            alt={lang === 'en' ? `Preview of the ${project.title} project` : `Anteprima del progetto ${project.title}`}
             width={1440}
             height={1000}
             preload={eager}
             loading={eager ? undefined : 'lazy'}
-            sizes={compact ? '(max-width: 760px) 100vw, 46vw' : '(max-width: 900px) 100vw, 68vw'}
+            sizes={compact ? '(max-width: 580px) 88vw, (max-width: 900px) 78vw, 42vw' : '(max-width: 900px) 100vw, 90vw'}
           />
         </div>
       </div>

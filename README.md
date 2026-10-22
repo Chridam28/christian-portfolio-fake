@@ -34,6 +34,16 @@ Copia `.env.example` in `.env.local` e configura:
 
 Email, WhatsApp e Instagram sono centralizzati in `data/site.ts` e condivisi da pagina Contatti, footer e pulsante flottante.
 
+## Lingue
+
+Il sito è in italiano (radice) e inglese (`/en/`). Le pagine sono componenti condivisi in `components/pages/` che ricevono `lang`; i testi italiani dei progetti sono in `data/projects.ts`, quelli inglesi in `data/projects-en.ts`; prezzi e FAQ in `data/pricing.ts`. Le corrispondenze tra URL italiani e inglesi (usate dal selettore lingua, da hreflang e dalla sitemap) sono in `lib/i18n.ts`.
+
+## Build, sicurezza e immagini
+
+- `pnpm run build` esegue `next build` e poi `scripts/postbuild.mjs`, che imposta `lang="en"` nelle pagine inglesi e genera in `out/_headers` una Content Security Policy per pagina basata sugli hash degli script inline.
+- I font (Inter Tight e Instrument Serif) sono scaricati in build da `next/font` e serviti dal dominio del sito: nessuna richiesta a Google dai visitatori.
+- Ogni screenshot in `public/projects/` ha una versione `-720.webp` per telefoni e schede piccole; il loader in `lib/image-loader.ts` sceglie quella giusta. Se aggiungi un'immagine, crea anche la variante da 720 px.
+
 ## Aggiungere un progetto
 
 1. Aggiungi le immagini ottimizzate in `public/projects/`.

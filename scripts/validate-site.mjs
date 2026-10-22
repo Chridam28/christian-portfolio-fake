@@ -20,11 +20,25 @@ const requiredRoutes = [
   '/cookie',
   '/progetti/federica-fadel',
   '/progetti/andrea-appierto',
-  '/progetti/casa-lume-boutique',
-  '/progetti/casa-lume-dimora',
+  '/progetti/college-life-italia',
+  '/progetti/casa-lume',
   '/progetti/studio-legale-aurea',
   '/progetti/studio-nutrizione',
   '/progetti/professionista-editoriale',
+  '/en',
+  '/en/services',
+  '/en/about',
+  '/en/contact',
+  '/en/portfolio',
+  '/en/privacy',
+  '/en/cookies',
+  '/en/projects/federica-fadel',
+  '/en/projects/andrea-appierto',
+  '/en/projects/college-life-italia',
+  '/en/projects/casa-lume',
+  '/en/projects/studio-legale-aurea',
+  '/en/projects/studio-nutrizione',
+  '/en/projects/professionista-editoriale',
 ];
 
 const routeFile = (route) => route === '/'
@@ -107,7 +121,7 @@ for (const [file, html] of pages) {
 
 const contactHtml = readFileSync(routeFile('/contatti'), 'utf8');
 for (const requirement of [
-  'Parliamo del tuo prossimo progetto.',
+  'Scrivimi. Ti rispondo io.',
   'mailto:christiandambrosio2002@gmail.com',
   'https://wa.me/393793547457?text=',
   'https://www.instagram.com/chri_dam/',
@@ -116,9 +130,31 @@ for (const requirement of [
 }
 if (/<form[\s>]/i.test(contactHtml)) failures.push('/contatti: il vecchio modulo è ancora presente');
 
+const contactEnHtml = readFileSync(routeFile('/en/contact'), 'utf8');
+for (const requirement of ['Message me. I’ll reply myself.', 'https://wa.me/393793547457?text=Hi%20Christian']) {
+  if (!contactEnHtml.includes(requirement)) failures.push(`/en/contact: contatto o contenuto mancante (${requirement})`);
+}
+
+for (const route of requiredRoutes) {
+  const html = readFileSync(routeFile(route), 'utf8');
+  const expected = route === '/en' || route.startsWith('/en/') ? 'en' : 'it';
+  if (!html.includes(`<html lang="${expected}"`)) failures.push(`${route}: attributo lang diverso da "${expected}"`);
+  if (!/hreflang="en"/i.test(html) && !route.startsWith('/lavori') && !route.startsWith('/demo')) failures.push(`${route}: alternate hreflang mancante`);
+}
+
+if (!existsSync(join(output, '_headers')) || !readFileSync(join(output, '_headers'), 'utf8').includes('Content-Security-Policy')) {
+  failures.push('out/_headers: Content Security Policy mancante (scripts/postbuild.mjs)');
+}
+
 const notFoundHtml = readFileSync(notFoundFile, 'utf8');
 if (!notFoundHtml.includes('Errore / 404') || !notFoundHtml.includes('Torna alla homepage')) {
   failures.push('/404.html: contenuto personalizzato non trovato');
+}
+
+const projectsSource = readFileSync(join(root, 'data', 'projects.ts'), 'utf8');
+const placeholderTestimonials = (projectsSource.match(/placeholder:\s*true/g) || []).length;
+if (placeholderTestimonials) {
+  console.warn(`Attenzione: ${placeholderTestimonials} testimonianze provvisorie in data/projects.ts. Sostituiscile con quelle reali prima di pubblicare il dominio definitivo.`);
 }
 
 if (failures.length) throw new Error(`Validazione fallita:\n${failures.join('\n')}`);
