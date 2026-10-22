@@ -679,3 +679,4 @@ body:has(.contact-start-section) .site-footer { padding-top: clamp(58px, 5vw, 74
   .testimonial-card figcaption { grid-template-columns: 44px 1fr; }
   .testimonial-card figcaption a { grid-column: 2; justify-self: start; }
 }
+.project-services:has(+ .customizations) { padding-bottom: 36px; }
