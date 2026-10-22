@@ -11,5 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function WorkPage() {
-  return <main><PageHero eyebrow="Progetti / Pubblicati" title="Siti già online." intro="Lavori realizzati per clienti veri, che puoi visitare. Per ognuno trovi cosa serviva e come l’ho costruito." meta="2 progetti pubblicati" /><section className="listing-section shell"><div className="portfolio-grid">{publishedProjects.map((project) => <ProjectCard project={project} key={project.id} />)}</div></section><ContactBand /></main>;
+  return <main><PageHero eyebrow="Progetti / Pubblicati" title="Siti già online." intro="Lavori realizzati per clienti veri, che puoi visitare. Per ognuno trovi cosa serviva e come l’ho costruito." meta={`${publishedProjects.length} progetti pubblicati`} /><section className="listing-section shell"><div className="portfolio-grid">{publishedProjects.map((project) => <ProjectCard project={project} key={project.id} />)}</div></section><ContactBand /></main>;
 }

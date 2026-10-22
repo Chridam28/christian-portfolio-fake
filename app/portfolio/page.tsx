@@ -11,5 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function PortfolioPage() {
-  return <main><PageHero eyebrow="Portfolio / Progetti" title="Lavori e demo." intro="Due siti già online e cinque demo che puoi aprire e provare: guarda come potrebbe funzionare il tuo." meta={`${projects.length} progetti`} /><section className="listing-section shell"><ProjectGallery items={projects} /></section><ContactBand /></main>;
+  return <main><PageHero eyebrow="Portfolio / Progetti" title="Lavori e demo." intro="Siti già online per clienti veri e demo che puoi aprire e provare: guarda come potrebbe funzionare il tuo." meta={`${projects.length} progetti`} /><section className="listing-section shell"><ProjectGallery items={projects} /></section><ContactBand /></main>;
 }

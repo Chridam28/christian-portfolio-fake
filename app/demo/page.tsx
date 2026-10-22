@@ -11,5 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function DemoPage() {
-  return <main><PageHero eyebrow="Demo / Interattive" title="Cinque demo da provare." intro="Siti dimostrativi per strutture ricettive e professionisti, completamente navigabili: aprili e prova prenotazioni, moduli e contatti." meta="5 demo interattive" /><section className="listing-section shell"><ProjectGallery items={demoProjects} /></section><ContactBand /></main>;
+  return <main><PageHero eyebrow="Demo / Interattive" title="Demo da provare." intro="Siti dimostrativi per strutture ricettive e professionisti, completamente navigabili: aprili e prova prenotazioni, moduli e contatti." meta={`${demoProjects.length} demo interattive`} /><section className="listing-section shell"><ProjectGallery items={demoProjects} /></section><ContactBand /></main>;
 }

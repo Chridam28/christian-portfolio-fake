@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ContactBand } from '@/components/ContactBand';
 import { Pricing } from '@/components/Pricing';
+import { Testimonials } from '@/components/Testimonials';
 import { ProjectGallery } from '@/components/ProjectGallery';
 import { projects } from '@/data/projects';
 
@@ -62,10 +63,12 @@ export default function Home() {
       </section>
 
       <section className="portfolio-section" id="progetti"><div className="shell">
-        <div className="section-heading reveal"><div><p className="eyebrow dark">01 / Progetti</p><h2>Lavori e demo.</h2></div><p>Due siti già online per due psicologi e cinque demo che puoi aprire e provare, per vedere come potrebbe funzionare il tuo.</p></div>
-        <ProjectGallery items={projects} />
+        <div className="section-heading reveal"><div><p className="eyebrow dark">01 / Progetti</p><h2>Lavori e demo.</h2></div><p>Tre siti già online per clienti veri e quattro demo che puoi aprire e provare. Scorri di lato per vederli tutti.</p></div>
+        <ProjectGallery items={projects} layout="carousel" />
         <Link className="button button-dark section-cta" href="/portfolio">Tutti i progetti <span aria-hidden="true">↗</span></Link>
       </div></section>
+
+      <Testimonials />
 
       <section className="services-section" id="servizi"><div className="shell services-layout">
         <div className="services-heading reveal"><p className="eyebrow">02 / Servizi</p><h2>Cosa posso<br /><em>fare per te.</em></h2><p>Mi dici cosa ti serve e ti propongo solo quello. Niente funzioni inutili per gonfiare il preventivo.</p><Link className="text-link light-link" href="/servizi">Servizi e prezzi <span aria-hidden="true">↗</span></Link></div>
