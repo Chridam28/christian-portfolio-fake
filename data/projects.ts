@@ -1,3 +1,6 @@
+import type { Lang } from '@/lib/i18n';
+import { projectsEn } from './projects-en';
+
 export type ProjectKind = 'real' | 'demo' | 'internal';
 export type ProjectStatus = 'online' | 'concept' | 'in-development';
 export type ProjectCategory =
@@ -60,19 +63,17 @@ export type Project = {
   possibleCustomizations?: string[];
 };
 
-export const statusLabels: Record<ProjectStatus, string> = {
-  online: 'Online',
-  concept: 'Demo navigabile',
-  'in-development': 'In sviluppo',
+export const statusLabels: Record<Lang, Record<ProjectStatus, string>> = {
+  it: { online: 'Online', concept: 'Demo navigabile', 'in-development': 'In sviluppo' },
+  en: { online: 'Live', concept: 'Interactive demo', 'in-development': 'In development' },
 };
 
-export const kindLabels: Record<ProjectKind, string> = {
-  real: 'Progetto pubblicato',
-  demo: 'Demo interattiva',
-  internal: 'Progetto interno',
+export const kindLabels: Record<Lang, Record<ProjectKind, string>> = {
+  it: { real: 'Progetto pubblicato', demo: 'Demo interattiva', internal: 'Progetto interno' },
+  en: { real: 'Live project', demo: 'Interactive demo', internal: 'Internal project' },
 };
 
-export const projects: Project[] = ([
+const projectsIt: Project[] = ([
   {
     id: 'real-001',
     slug: 'federica-fadel',
@@ -359,10 +360,32 @@ export const projects: Project[] = ([
   },
 ] satisfies Project[]).sort((a, b) => a.order - b.order);
 
-export const publishedProjects = projects.filter((project) => project.kind === 'real');
-export const demoProjects = projects.filter((project) => project.kind !== 'real');
-export const testimonials = projects.flatMap((project) => (project.testimonial ? [{ ...project.testimonial, slug: project.slug }] : []));
-
-export function getProject(slug: string) {
-  return projects.find((project) => project.slug === slug);
+function localise(project: Project, lang: Lang): Project {
+  if (lang === 'it') return project;
+  const en = projectsEn[project.slug];
+  if (!en) return project;
+  const { testimonial, variant, ...copy } = en;
+  return {
+    ...project,
+    ...copy,
+    testimonial: project.testimonial && testimonial ? { ...project.testimonial, ...testimonial } : project.testimonial,
+    variant: project.variant && variant ? { ...project.variant, ...variant } : project.variant,
+  };
 }
+
+export function getProjects(lang: Lang = 'it') {
+  return projectsIt.map((project) => localise(project, lang));
+}
+
+export function getProject(slug: string, lang: Lang = 'it') {
+  const project = projectsIt.find((item) => item.slug === slug);
+  return project ? localise(project, lang) : undefined;
+}
+
+export function getTestimonials(lang: Lang = 'it') {
+  return getProjects(lang).flatMap((project) => (project.testimonial ? [{ ...project.testimonial, slug: project.slug }] : []));
+}
+
+export const projects = projectsIt;
+export const publishedProjects = projectsIt.filter((project) => project.kind === 'real');
+export const demoProjects = projectsIt.filter((project) => project.kind !== 'real');

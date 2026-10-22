@@ -1,21 +1,27 @@
-import { faqs } from '@/data/pricing';
+import { pricing } from '@/data/pricing';
+import { sectionIds, type Lang } from '@/lib/i18n';
 
-const faqJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map((item) => ({
-    '@type': 'Question',
-    name: item.question,
-    acceptedAnswer: { '@type': 'Answer', text: item.answer },
-  })),
-};
+export function Faq({ lang }: { lang: Lang }) {
+  const { faqs } = pricing[lang];
+  const t = lang === 'en'
+    ? { eyebrow: 'Frequently asked questions', title: <>The answers,<br /><em>before you ask.</em></> }
+    : { eyebrow: 'Domande frequenti', title: <>Le risposte<br /><em>prima di chiedere.</em></> };
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    inLanguage: lang,
+    mainEntity: faqs.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  };
 
-export function Faq() {
   return (
-    <section className="faq-section shell" id="faq" aria-labelledby="faq-title">
+    <section className="faq-section shell" id={sectionIds.faq[lang]} aria-labelledby="faq-title">
       <div className="faq-heading reveal">
-        <p className="eyebrow dark">Domande frequenti</p>
-        <h2 id="faq-title">Le risposte<br /><em>prima di chiedere.</em></h2>
+        <p className="eyebrow dark">{t.eyebrow}</p>
+        <h2 id="faq-title">{t.title}</h2>
       </div>
       <div className="faq-list">
         {faqs.map((item, index) => (

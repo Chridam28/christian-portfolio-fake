@@ -4,22 +4,31 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import type { Project } from '@/data/projects';
 import { ProjectCard } from './ProjectCard';
 
+import type { Lang } from '@/lib/i18n';
+
 const filters = [
-  { label: 'Tutti', key: 'all' },
-  { label: 'Progetti pubblicati', key: 'real' },
-  { label: 'Demo interattive', key: 'demo' },
-  { label: 'Professionisti', key: 'professionisti' },
-  { label: 'Hospitality', key: 'hospitality' },
-  { label: 'Sport', key: 'sport' },
+  { label: { it: 'Tutti', en: 'All' }, key: 'all' },
+  { label: { it: 'Progetti pubblicati', en: 'Live projects' }, key: 'real' },
+  { label: { it: 'Demo interattive', en: 'Interactive demos' }, key: 'demo' },
+  { label: { it: 'Professionisti', en: 'Professionals' }, key: 'professionisti' },
+  { label: { it: 'Hospitality', en: 'Hospitality' }, key: 'hospitality' },
+  { label: { it: 'Sport', en: 'Sport' }, key: 'sport' },
 ] as const;
 
+const copy = {
+  it: { filter: 'Filtra i progetti', one: 'progetto', many: 'progetti', prev: 'Progetto precedente', next: 'Progetto successivo', region: 'Progetti, scorri in orizzontale' },
+  en: { filter: 'Filter projects', one: 'project', many: 'projects', prev: 'Previous project', next: 'Next project', region: 'Projects, scroll horizontally' },
+};
+
 type GalleryProps = {
+  lang: Lang;
   items: Project[];
   limit?: number;
   layout?: 'grid' | 'carousel';
 };
 
-export function ProjectGallery({ items, limit, layout = 'grid' }: GalleryProps) {
+export function ProjectGallery({ lang, items, limit, layout = 'grid' }: GalleryProps) {
+  const t = copy[lang];
   const [active, setActive] = useState<(typeof filters)[number]['key']>('all');
   const trackRef = useRef<HTMLDivElement>(null);
   const [edges, setEdges] = useState({ start: true, end: false });
@@ -66,7 +75,7 @@ export function ProjectGallery({ items, limit, layout = 'grid' }: GalleryProps) 
 
   return (
     <div className={`project-gallery${isCarousel ? ' is-carousel' : ''}`}>
-      <div className="filter-bar" aria-label="Filtra i progetti">
+      <div className="filter-bar" aria-label={t.filter}>
         {filters.map((filter) => (
           <button
             type="button"
@@ -75,16 +84,16 @@ export function ProjectGallery({ items, limit, layout = 'grid' }: GalleryProps) 
             aria-pressed={active === filter.key}
             onClick={() => setActive(filter.key)}
           >
-            {filter.label}
+            {filter.label[lang]}
           </button>
         ))}
       </div>
       <div className="gallery-toolbar">
-        <p className="filter-count" aria-live="polite">{visible.length} {visible.length === 1 ? 'progetto' : 'progetti'}</p>
+        <p className="filter-count" aria-live="polite">{visible.length} {visible.length === 1 ? t.one : t.many}</p>
         {isCarousel && visible.length > 1 && (
           <div className="carousel-controls">
-            <button type="button" onClick={() => scrollByCard(-1)} disabled={edges.start} aria-label="Progetto precedente">←</button>
-            <button type="button" onClick={() => scrollByCard(1)} disabled={edges.end} aria-label="Progetto successivo">→</button>
+            <button type="button" onClick={() => scrollByCard(-1)} disabled={edges.start} aria-label={t.prev}>←</button>
+            <button type="button" onClick={() => scrollByCard(1)} disabled={edges.end} aria-label={t.next}>→</button>
           </div>
         )}
       </div>
@@ -93,9 +102,9 @@ export function ProjectGallery({ items, limit, layout = 'grid' }: GalleryProps) 
         ref={isCarousel ? trackRef : undefined}
         tabIndex={isCarousel ? 0 : undefined}
         role={isCarousel ? 'region' : undefined}
-        aria-label={isCarousel ? 'Progetti, scorri in orizzontale' : undefined}
+        aria-label={isCarousel ? t.region : undefined}
       >
-        {visible.map((project, index) => <ProjectCard project={project} eager={index === 0} key={project.id} />)}
+        {visible.map((project, index) => <ProjectCard lang={lang} project={project} eager={index === 0} key={project.id} />)}
       </div>
     </div>
   );

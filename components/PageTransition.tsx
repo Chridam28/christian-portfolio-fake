@@ -50,6 +50,7 @@ export function PageTransition({ children }: Readonly<{ children: React.ReactNod
       if (
         !anchor
         || anchor.hasAttribute('download')
+        || anchor.hasAttribute('data-no-transition')
         || (anchor.target && anchor.target !== '_self')
         || anchor.getAttribute('rel')?.split(/\s+/).includes('external')
       ) return;

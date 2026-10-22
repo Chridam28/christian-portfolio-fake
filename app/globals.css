@@ -8,8 +8,8 @@
   --muted: #a7aaa4;
   --accent: #ff6542;
   --accent-dark: #cc3b1c;
-  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-serif: Iowan Old Style, Baskerville, "Times New Roman", serif;
+  --font-sans: var(--font-inter-tight), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
 }
 
 * { box-sizing: border-box; }
@@ -680,3 +680,38 @@ body:has(.contact-start-section) .site-footer { padding-top: clamp(58px, 5vw, 74
   .testimonial-card figcaption a { grid-column: 2; justify-self: start; }
 }
 .project-services:has(+ .customizations) { padding-bottom: 36px; }
+
+
+/* Header actions and language switcher */
+.header-actions { justify-self: end; display: flex; align-items: center; gap: 22px; }
+.header-actions .header-cta { justify-self: auto; }
+.site-header .lang-switch { display: flex; align-items: center; gap: 2px; padding: 3px; border: 1px solid var(--line-dark); border-radius: 100px; color: #c5c6c2; font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+.lang-switch a, .lang-switch span { min-width: 36px; height: 30px; display: grid; place-items: center; padding: 0 8px; border-radius: 100px; }
+.lang-switch a { transition: color .2s ease, background .2s ease; }
+.lang-switch a:hover { color: var(--accent); }
+.lang-switch a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.lang-switch [aria-current] { background: var(--ivory); color: var(--ink); }
+@media (max-width: 900px) {
+  .header-actions { gap: 14px; }
+  .site-header .lang-switch { display: flex; }
+}
+
+/* Readability: small labels at a legible size and contrast (WCAG AA) */
+.card-kicker { font-size: 11px; color: #5c605a; }
+.portfolio-card[data-project-kind='real'] .card-kicker span:first-child { color: #a82f15; }
+.card-footer > span { color: #5c605a; }
+.filter-count { font-size: 11px; color: #5c605a; }
+.browser-bar { font-size: 10px; color: #6b6e68; }
+.project-facts dt { font-size: 11px; color: #62665f; }
+.page-hero-meta, .project-hero-top > span { font-size: 11px; }
+.method-card-top > span, .reasons-grid li span, .objectives li span, .feature-list span, .offer-row > span, .service-row > span, .highlight-card > span, .faq-item summary span, .working-grid span { font-size: 11px; }
+.list-title { font-size: 11px; color: #5c605a; }
+.case-solution .list-title { color: #a7aaa4; }
+.eyebrow.dark { color: #5c605a; }
+.not-found-en { margin-top: 28px; font-size: 14px; }
+.not-found-en a { border-bottom: 1px solid currentColor; }
+
+/* Floating contact: dark pill with accent ring, visible on light, dark and orange sections */
+.floating-contact-trigger { background: var(--ink); color: var(--ivory); border-color: var(--accent); box-shadow: 0 14px 42px rgba(16,19,17,.32); }
+.floating-contact-trigger:hover { background: #262b27; color: var(--accent); }
+.floating-contact-trigger svg { color: var(--accent); }
