@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { ContactBand } from '@/components/ContactBand';
 import { Pricing } from '@/components/Pricing';
 import { ProjectGallery } from '@/components/ProjectGallery';
-import { Testimonials } from '@/components/Testimonials';
 import { getProjects } from '@/data/projects';
 import { href, sectionIds, type Lang } from '@/lib/i18n';
 
@@ -140,8 +139,6 @@ export function HomePage({ lang }: { lang: Lang }) {
         <ProjectGallery lang={lang} items={getProjects(lang)} layout="carousel" />
         <Link className="button button-dark section-cta" href={href('portfolio', lang)}>{t.projects.all} <span aria-hidden="true">↗</span></Link>
       </div></section>
-
-      <Testimonials lang={lang} />
 
       <section className="services-section" id={sectionIds.services[lang]}><div className="shell services-layout">
         <div className="services-heading reveal"><p className="eyebrow">{t.services.eyebrow}</p><h2>{t.services.title}</h2><p>{t.services.text}</p><Link className="text-link light-link" href={href('services', lang)}>{t.services.link} <span aria-hidden="true">↗</span></Link></div>
