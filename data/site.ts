@@ -17,7 +17,7 @@ export const siteConfig = {
   whatsapp: contactWhatsapp,
   instagram: contactInstagram,
   vat: '09207350720',
-  canonicalUrl: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+  canonicalUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://christiandambrosio.com',
   responseTime: { it: 'Rispondo di solito entro poche ore', en: 'I usually reply within a few hours' },
 } as const;
 
