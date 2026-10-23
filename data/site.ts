@@ -16,7 +16,7 @@ export const siteConfig = {
   phone: contactWhatsapp,
   whatsapp: contactWhatsapp,
   instagram: contactInstagram,
-  vat: process.env.NEXT_PUBLIC_VAT_NUMBER || '[INSERIRE DATI]',
+  vat: '09207350720',
   canonicalUrl: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
   responseTime: { it: 'Rispondo di solito entro poche ore', en: 'I usually reply within a few hours' },
 } as const;
