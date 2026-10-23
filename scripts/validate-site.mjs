@@ -52,7 +52,7 @@ for (const route of requiredRoutes) {
 const notFoundFile = join(output, '404.html');
 if (!existsSync(notFoundFile)) throw new Error('Pagina statica 404 mancante: /404.html');
 
-for (const asset of ['sitemap.xml', 'robots.txt', 'manifest.webmanifest', 'og.png']) {
+for (const asset of ['sitemap.xml', 'robots.txt', 'manifest.webmanifest', 'og-it.png', 'og-en.png']) {
   if (!existsSync(join(output, asset))) throw new Error(`Asset SEO mancante: /${asset}`);
 }
 

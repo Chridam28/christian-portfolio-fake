@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     siteName: 'Christian D’Ambrosio',
     title: 'Christian D’Ambrosio — Freelance web designer in Trieste, Italy',
     description: 'Custom websites for professionals and small businesses. From €350, first demo within 48 hours.',
-    images: [{ url: '/og.png', width: 1730, height: 909, alt: 'Christian D’Ambrosio — Freelance web designer and developer' }],
+    images: [{ url: '/og-en.png', width: 1200, height: 630, alt: 'Christian D’Ambrosio — Freelance web designer and developer' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Christian D’Ambrosio — Freelance web designer in Trieste, Italy',
     description: 'Custom websites for professionals and small businesses. From €350, first demo within 48 hours.',
-    images: ['/og.png'],
+    images: ['/og-en.png'],
   },
 };
 

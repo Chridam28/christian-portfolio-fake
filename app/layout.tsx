@@ -34,13 +34,13 @@ export const metadata: Metadata = {
     siteName: 'Christian D’Ambrosio',
     title: 'Christian D’Ambrosio — Web designer freelance a Trieste',
     description: 'Siti web su misura per professionisti e piccole attività. Da 350 €, prima demo in 48 ore.',
-    images: [{ url: '/og.png', width: 1730, height: 909, alt: 'Christian D’Ambrosio — Web designer e sviluppatore freelance' }],
+    images: [{ url: '/og-it.png', width: 1200, height: 630, alt: 'Christian D’Ambrosio — Web designer e sviluppatore freelance' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Christian D’Ambrosio — Web designer freelance a Trieste',
     description: 'Siti web su misura per professionisti e piccole attività. Da 350 €, prima demo in 48 ore.',
-    images: ['/og.png'],
+    images: ['/og-it.png'],
   },
   icons: {
     icon: [
