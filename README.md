@@ -42,7 +42,7 @@ Il sito è in italiano (radice) e inglese (`/en/`). Le pagine sono componenti co
 
 - `pnpm run build` esegue `next build` e poi `scripts/postbuild.mjs`, che imposta `lang="en"` nelle pagine inglesi e genera in `out/_headers` una Content Security Policy per pagina basata sugli hash degli script inline.
 - I font (Inter Tight e Instrument Serif) sono scaricati in build da `next/font` e serviti dal dominio del sito: nessuna richiesta a Google dai visitatori.
-- Ogni screenshot in `public/projects/` ha una versione `-720.webp` per telefoni e schede piccole; il loader in `lib/image-loader.ts` sceglie quella giusta. Se aggiungi un'immagine, crea anche la variante da 720 px.
+- Ogni screenshot in `public/projects/` esiste in tre misure: `NOME.webp` (fino a 2880 px), `NOME-1440.webp` e `NOME-720.webp`; il loader in `lib/image-loader.ts` sceglie quella giusta. Se aggiungi un'immagine, crea tutte e tre le varianti.
 
 ## Aggiungere un progetto
 

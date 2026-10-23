@@ -11,14 +11,6 @@ export type ProjectCategory =
 
 export type ProjectHighlight = { title: string; text: string };
 
-export type ProjectTestimonial = {
-  quote: string;
-  author: string;
-  role: string;
-  /** true = testo provvisorio, da sostituire con la testimonianza reale prima della pubblicazione */
-  placeholder?: boolean;
-};
-
 export type ProjectVariant = {
   label: string;
   title: string;
@@ -55,7 +47,6 @@ export type Project = {
   featured: boolean;
   order: number;
   theme: 'moss' | 'sage' | 'clay' | 'sand' | 'sky' | 'wine' | 'ink';
-  testimonial?: ProjectTestimonial;
   variant?: ProjectVariant;
   categories: ProjectCategory[];
   typeLabel: string;
@@ -114,12 +105,6 @@ const projectsIt: Project[] = ([
     featured: true,
     order: 1,
     theme: 'moss',
-    testimonial: {
-      quote: 'Avevo paura di un sito freddo, da clinica. Christian ha capito al primo incontro il tono che cercavo e me l’ha restituito in ogni dettaglio. Chi mi scrive oggi mi dice che si è sentito accolto già leggendo la pagina. E quando devo cambiare qualcosa gli mando un messaggio: è fatto in giornata.',
-      author: 'Dott.ssa Federica Fadel',
-      role: 'Psicologa, Trieste e Conegliano',
-      placeholder: true,
-    },
     categories: ['professionisti'],
     typeLabel: 'Sito one page',
   },
@@ -163,12 +148,6 @@ const projectsIt: Project[] = ([
     featured: true,
     order: 2,
     theme: 'sage',
-    testimonial: {
-      quote: 'Mi occupo di tre cose molto diverse e temevo un sito confuso. Christian le ha messe in fila in modo semplice e pulito: ora chi mi contatta arriva sapendo già quale percorso gli interessa. Sempre disponibile, veloce e chiaro su tempi e costi fin dal primo giorno.',
-      author: 'Dott. Andrea Appierto',
-      role: 'Psicologo e psicologo dello sport, Padova',
-      placeholder: true,
-    },
     categories: ['professionisti', 'sport'],
     typeLabel: 'Sito multipagina',
   },
@@ -364,11 +343,10 @@ function localise(project: Project, lang: Lang): Project {
   if (lang === 'it') return project;
   const en = projectsEn[project.slug];
   if (!en) return project;
-  const { testimonial, variant, ...copy } = en;
+  const { variant, ...copy } = en;
   return {
     ...project,
     ...copy,
-    testimonial: project.testimonial && testimonial ? { ...project.testimonial, ...testimonial } : project.testimonial,
     variant: project.variant && variant ? { ...project.variant, ...variant } : project.variant,
   };
 }
@@ -380,10 +358,6 @@ export function getProjects(lang: Lang = 'it') {
 export function getProject(slug: string, lang: Lang = 'it') {
   const project = projectsIt.find((item) => item.slug === slug);
   return project ? localise(project, lang) : undefined;
-}
-
-export function getTestimonials(lang: Lang = 'it') {
-  return getProjects(lang).flatMap((project) => (project.testimonial ? [{ ...project.testimonial, slug: project.slug }] : []));
 }
 
 export const projects = projectsIt;

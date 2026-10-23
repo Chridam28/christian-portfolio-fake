@@ -1,10 +1,13 @@
 'use client';
 
-/**
- * Static-export image loader: project screenshots ship in two sizes,
- * the original (up to 1440px) and a "-720" version for phones and small cards.
- */
+// Bump when screenshots are replaced: /projects/* is served with an immutable
+// one-year cache, so a new query string forces browsers to fetch the new files.
+const VERSION = '2';
+
 export default function imageLoader({ src, width }: { src: string; width: number; quality?: number }) {
   if (!src.startsWith('/projects/') || !src.endsWith('.webp')) return src;
-  return width <= 720 ? src.replace(/\.webp$/, '-720.webp') : src;
+  let file = src;
+  if (width <= 720) file = src.replace(/\.webp$/, '-720.webp');
+  else if (width <= 1440) file = src.replace(/\.webp$/, '-1440.webp');
+  return `${file}?v=${VERSION}`;
 }
