@@ -746,3 +746,8 @@ body:has(.contact-start-section) .site-footer { padding-top: clamp(58px, 5vw, 74
 .highlight-card h3 { letter-spacing: -0.025em; }
 .variant-grid h2 { letter-spacing: -0.037em; }
 h1 em, h2 em, h3 em { letter-spacing: -0.01em; }
+.legal-page ul { margin: 0 0 1em; padding-left: 1.2em; color: #575b55; font-size: 1.05rem; }
+.legal-page li { margin-bottom: .6em; }
+.legal-page li::marker { color: var(--accent-dark); }
+.legal-page a { border-bottom: 1px solid currentColor; }
+.legal-page strong { color: #2b2f2a; }

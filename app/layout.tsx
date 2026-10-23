@@ -42,7 +42,13 @@ export const metadata: Metadata = {
     description: 'Siti web su misura per professionisti e piccole attività. Da 350 €, prima demo in 48 ore.',
     images: ['/og.png'],
   },
-  icons: { icon: '/og.png', apple: '/og.png' },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '48x48' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+  },
 };
 
 export const viewport: Viewport = {

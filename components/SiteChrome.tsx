@@ -22,6 +22,9 @@ export function SiteChrome({ lang, children }: Readonly<{ lang: Lang; children: 
     areaServed: 'IT',
     knowsLanguage: ['it', 'en'],
     address: { '@type': 'PostalAddress', addressLocality: 'Trieste', addressCountry: 'IT' },
+    vatID: `IT${siteConfig.vat}`,
+    email: siteConfig.email,
+    telephone: siteConfig.phone,
     founder: { '@type': 'Person', name: siteConfig.name, jobTitle: siteConfig.role[lang] },
   };
 

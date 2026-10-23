@@ -29,8 +29,11 @@ Il test va eseguito dopo la build: controlla route obbligatorie, pagina 404 pers
 
 Copia `.env.example` in `.env.local` e configura:
 
-- `NEXT_PUBLIC_SITE_URL`: dominio definitivo completo di `https://`;
-- `NEXT_PUBLIC_VAT_NUMBER`.
+- `NEXT_PUBLIC_SITE_URL`: dominio definitivo completo di `https://`.
+
+La partita IVA è in `data/site.ts`.
+
+Le icone (favicon.ico, icon.svg, apple-touch-icon.png, icon-192/512.png) sono in `public/`.
 
 Email, WhatsApp e Instagram sono centralizzati in `data/site.ts` e condivisi da pagina Contatti, footer e pulsante flottante.
 
