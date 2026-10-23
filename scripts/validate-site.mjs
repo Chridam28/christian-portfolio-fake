@@ -151,11 +151,6 @@ if (!notFoundHtml.includes('Errore / 404') || !notFoundHtml.includes('Torna alla
   failures.push('/404.html: contenuto personalizzato non trovato');
 }
 
-const projectsSource = readFileSync(join(root, 'data', 'projects.ts'), 'utf8');
-const placeholderTestimonials = (projectsSource.match(/placeholder:\s*true/g) || []).length;
-if (placeholderTestimonials) {
-  console.warn(`Attenzione: ${placeholderTestimonials} testimonianze provvisorie in data/projects.ts. Sostituiscile con quelle reali prima di pubblicare il dominio definitivo.`);
-}
 
 if (failures.length) throw new Error(`Validazione fallita:\n${failures.join('\n')}`);
 console.log(`Validazione completata: ${htmlFiles.length} pagine HTML, ${requiredRoutes.length} route, pagina 404, contatti diretti, link e ${assetReferences.size} risorse locali controllati.`);

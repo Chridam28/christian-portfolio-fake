@@ -4,7 +4,6 @@ type Translatable = Pick<Project,
   | 'title' | 'sector' | 'year' | 'shortDescription' | 'fullDescription' | 'problem' | 'objectives'
   | 'solutionTitle' | 'solution' | 'features' | 'highlights' | 'services' | 'typeLabel'
 > & Partial<Pick<Project, 'galleryTitle' | 'mobileTitle' | 'mobileText' | 'scenarioLabel' | 'possibleCustomizations'>> & {
-  testimonial?: { quote: string; author: string; role: string };
   variant?: { label: string; title: string; description: string; features: string[] };
 };
 
@@ -40,11 +39,6 @@ export const projectsEn: Record<string, Translatable> = {
     mobileTitle: 'The first step, from a phone.',
     mobileText: 'Many people look for a psychologist on their phone, often in the evening. On mobile the menu is pared back to the essentials and WhatsApp is one tap away: sending a message feels easier than making a call.',
     typeLabel: 'One-page website',
-    testimonial: {
-      quote: 'I was worried about ending up with a cold, clinical website. Christian understood the tone I was after from our very first meeting and carried it through every detail. People who contact me now often say they felt welcome just reading the page. And when I need to change something, I send him a message and it’s done the same day.',
-      author: 'Dr Federica Fadel',
-      role: 'Psychologist, Trieste and Conegliano',
-    },
   },
   'andrea-appierto': {
     title: 'Andrea Appierto',
@@ -76,11 +70,6 @@ export const projectsEn: Record<string, Translatable> = {
     mobileTitle: 'From phone to first session.',
     mobileText: 'A compact menu, easy-to-read cards and a contact button that stays visible at the bottom of the screen: on a smartphone, getting in touch with Andrea takes just a few taps.',
     typeLabel: 'Multi-page website',
-    testimonial: {
-      quote: 'I work in three very different areas and I was afraid of ending up with a confusing website. Christian laid them out simply and cleanly: now people who contact me already know which path they’re interested in. Always available, quick, and clear about timing and costs from day one.',
-      author: 'Dr Andrea Appierto',
-      role: 'Psychologist and sport psychologist, Padua',
-    },
   },
   'college-life-italia': {
     title: 'College Life Italia',
