@@ -655,7 +655,8 @@ body:has(.contact-start-section) .site-footer { padding-top: clamp(58px, 5vw, 74
 
 @media (max-width: 900px) {
   .portfolio-track { grid-auto-columns: 78%; }
-  .highlights-grid, .highlights-grid.count-4, .variant-grid, }
+  .highlights-grid, .highlights-grid.count-4, .variant-grid { grid-template-columns: 1fr; }
+}
 @media (max-width: 580px) {
   .portfolio-track { grid-auto-columns: 88%; gap: 14px; }
   .carousel-controls button { width: 44px; height: 44px; }
