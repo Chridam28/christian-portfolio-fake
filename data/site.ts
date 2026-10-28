@@ -18,7 +18,7 @@ export const siteConfig = {
   instagram: contactInstagram,
   vat: '09207350720',
   /** Google Analytics 4 measurement ID (G-XXXXXXXXXX). Leave empty to disable analytics and the cookie banner. */
-  gaMeasurementId: 'G-TEST000000',
+  gaMeasurementId: '',
   canonicalUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://christiandambrosio.com',
   responseTime: { it: 'Rispondo di solito entro poche ore', en: 'I usually reply within a few hours' },
 } as const;
