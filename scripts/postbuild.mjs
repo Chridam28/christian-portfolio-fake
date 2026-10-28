@@ -21,11 +21,11 @@ walk(out);
 
 const policy = (scriptHashes) => [
   "default-src 'self'",
-  `script-src 'self' ${scriptHashes.join(' ')}`.trim(),
+  `script-src 'self' https://www.googletagmanager.com ${scriptHashes.join(' ')}`.trim(),
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data:",
+  "img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com",
   "font-src 'self'",
-  "connect-src 'self'",
+  "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com",
   "manifest-src 'self'",
   "frame-src 'none'",
   "object-src 'none'",
