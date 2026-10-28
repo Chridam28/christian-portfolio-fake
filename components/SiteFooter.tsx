@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { CookiePreferencesButton } from '@/components/CookieConsent';
 import { contactLinks, navigation, siteConfig } from '@/data/site';
 import { href, type Lang } from '@/lib/i18n';
 
@@ -31,6 +32,7 @@ export function SiteFooter({ lang }: { lang: Lang }) {
           <p className="footer-label">{t.info}</p>
           <Link href={href('privacy', lang)}>Privacy policy</Link>
           <Link href={href('cookie', lang)}>Cookie policy</Link>
+          <CookiePreferencesButton lang={lang} />
           <a href={links.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
           <span>{t.vat} {siteConfig.vat}</span>
         </div>

@@ -1,3 +1,4 @@
+import { CookieConsent } from '@/components/CookieConsent';
 import { FloatingContacts } from '@/components/FloatingContacts';
 import { HtmlLang } from '@/components/HtmlLang';
 import { PageTransition } from '@/components/PageTransition';
@@ -36,6 +37,7 @@ export function SiteChrome({ lang, children }: Readonly<{ lang: Lang; children: 
       <div id="contenuto"><PageTransition>{children}</PageTransition></div>
       <SiteFooter lang={lang} />
       <FloatingContacts lang={lang} />
+      <CookieConsent lang={lang} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </div>
   );

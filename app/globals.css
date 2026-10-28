@@ -751,3 +751,22 @@ h1 em, h2 em, h3 em { letter-spacing: -0.01em; }
 .legal-page li::marker { color: var(--accent-dark); }
 .legal-page a { border-bottom: 1px solid currentColor; }
 .legal-page strong { color: #2b2f2a; }
+
+/* Cookie consent */
+.cookie-preferences-link { padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; transition: color .2s ease; }
+.cookie-preferences-link:hover { color: var(--accent); }
+.cookie-banner { position: fixed; z-index: 120; left: calc(18px + env(safe-area-inset-left, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); width: min(440px, calc(100vw - 36px)); padding: 24px 24px 22px; background: var(--ink); color: var(--ivory); border: 1px solid var(--line-dark); box-shadow: 0 24px 60px rgba(16,19,17,.35); animation: cookie-in .35s cubic-bezier(.2,.75,.25,1) both; }
+.cookie-title { margin: 0 34px 10px 0; font-size: 1.15rem; font-weight: 650; letter-spacing: -.02em; }
+.cookie-text { margin: 0; color: #c9cbc6; font-size: 14px; line-height: 1.55; }
+.cookie-text a { color: var(--ivory); border-bottom: 1px solid currentColor; }
+.cookie-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
+.cookie-button { min-height: 48px; padding: 0 16px; border: 1px solid var(--ivory); border-radius: 2px; background: transparent; color: var(--ivory); font: 650 14px var(--font-sans); cursor: pointer; transition: background .2s ease, color .2s ease; }
+.cookie-button:hover { background: var(--ivory); color: var(--ink); }
+.cookie-close { position: absolute; top: 8px; right: 8px; width: 44px; height: 44px; border: 0; background: none; color: #c9cbc6; font-size: 24px; line-height: 1; cursor: pointer; }
+.cookie-close:hover { color: var(--ivory); }
+@keyframes cookie-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@media (max-width: 580px) {
+  .cookie-banner { left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); width: auto; padding: 20px 18px 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .cookie-banner { animation: none; } }
+body:has(.cookie-banner) .floating-contact { visibility: hidden; }

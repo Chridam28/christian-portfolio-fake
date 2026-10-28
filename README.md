@@ -33,6 +33,10 @@ Copia `.env.example` in `.env.local` e configura:
 
 La partita IVA è in `data/site.ts`.
 
+## Statistiche e cookie
+
+L'ID di Google Analytics 4 va in `gaMeasurementId` in `data/site.ts`: se è vuoto, Analytics e banner cookie sono disattivati. Analytics si carica solo dopo il consenso (`lib/analytics.ts`, `components/CookieConsent.tsx`); gli eventi sono raccolti in `components/SiteEnhancements.tsx`.
+
 Le icone (favicon.ico, icon.svg, apple-touch-icon.png, icon-192/512.png) sono in `public/`.
 
 Email, WhatsApp e Instagram sono centralizzati in `data/site.ts` e condivisi da pagina Contatti, footer e pulsante flottante.
