@@ -268,6 +268,7 @@ img { display: block; max-width: 100%; }
 .theme-sky { --project-tone: #d3e1e4; --project-accent: #317080; }
 .theme-wine { --project-tone: #dccdd1; --project-accent: #713a4a; }
 .theme-ink { --project-tone: #d7d7d3; --project-accent: #242824; }
+.theme-rose { --project-tone: #f1d3dd; --project-accent: #2a5034; }
 .project-preview-image { background: var(--project-tone, #d9ded4); }
 .project-preview-image .browser-frame img { aspect-ratio: 1.44; }
 .demo-preview { aspect-ratio: 1.36; background-color: var(--project-tone); background-image: linear-gradient(rgba(16,19,17,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(16,19,17,.08) 1px, transparent 1px); background-size: 42px 42px; }
