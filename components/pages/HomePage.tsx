@@ -18,7 +18,7 @@ const copy = {
     introIndex: '00 / In breve',
     introLead: 'Niente agenzie, niente intermediari.',
     introText: 'Mi scrivi, ti rispondo io e sono sempre io a costruire e aggiornare il tuo sito.',
-    projects: { eyebrow: '01 / Progetti', title: 'Lavori e demo.', text: 'Tre siti già online per clienti veri e quattro demo che puoi aprire e provare. Scorri di lato per vederli tutti.', all: 'Tutti i progetti' },
+    projects: { eyebrow: '01 / Progetti', title: 'Lavori e demo.', text: 'Quattro siti già online per clienti veri e quattro demo che puoi aprire e provare. Scorri di lato per vederli tutti.', all: 'Tutti i progetti' },
     services: {
       eyebrow: '02 / Servizi', title: <>Cosa posso<br /><em>fare per te.</em></>, text: 'Mi dici cosa ti serve e ti propongo solo quello. Niente funzioni inutili per gonfiare il preventivo.', link: 'Servizi e prezzi',
       items: [
@@ -65,7 +65,7 @@ const copy = {
     introIndex: '00 / In short',
     introLead: 'No agencies, no middlemen.',
     introText: 'You message me, I reply, and I’m the one who builds and updates your website.',
-    projects: { eyebrow: '01 / Work', title: 'Work and demos.', text: 'Three websites already live for real clients and four demos you can open and try. Scroll sideways to see them all.', all: 'All projects' },
+    projects: { eyebrow: '01 / Work', title: 'Work and demos.', text: 'Four websites already live for real clients and four demos you can open and try. Scroll sideways to see them all.', all: 'All projects' },
     services: {
       eyebrow: '02 / Services', title: <>What I can<br /><em>do for you.</em></>, text: 'Tell me what you need and I’ll propose exactly that. No unnecessary features to pad out the quote.', link: 'Services and pricing',
       items: [
